@@ -1,0 +1,6 @@
+Buttons:
+>> #26D4B1
+! Make Logo
+Fonts:
+>> Ubuntu
+>> Open Sans

@@ -1,0 +1,198 @@
+.main-section, .blue
+
+#home {
+  background-image: url(/img/seablue.jpg);
+  width: 100%;
+  height: 60%;
+  h1 {
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 96px;
+    color: white;
+  }
+  p {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    color: #0a3da3;
+  }
+}
+
+#main-menu {
+  background-color: #0a3da3;
+  width: 100%;
+  height: 60%;
+}
+
+#card1 h1 {
+  text-align: left;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 32px;
+  color: white;
+}
+
+#card1 p {
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+#card2 h1 {
+  text-align: right;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 32px;
+  color: white;
+}
+
+#card2 p {
+  text-align: right;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+#contributor {
+  background-image: url(fishclouds.jpg);
+  width: 100%;
+  height: 60%;
+
+  h1, p {
+    text-align: center;
+    color: white;
+  }
+
+  .forcontributor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    background-color: #0a3da3;
+  }
+}
+
+#updates {
+  background-color: #0a3da3;
+  width: 100%;
+  height: 60%;
+  text-align: left;
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: white;
+  }
+  h1 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 32px;
+    color: white;
+  }
+  img {
+    display: block;
+    margin-right: 70%;
+    float: left;
+    size: auto;
+  }
+  ul {
+    list-style-type: disc;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: white;
+  }
+
+  .container {
+    display: grid;
+    column-gap: 20px;
+    
+  }
+}
+
+#feedback {
+  background-image: url(/img/purplewithcorn.jpg);
+  background-attachment: local;
+  width: 100%;
+  height: 60%;
+
+  h1 {
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 32px;
+    color: white;
+  }
+
+  p {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: white;
+  }
+  #form_feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    background-color: #0a3da3;
+    width: 40%;
+    margin: 20%;
+    padding: 10;
+  }
+}
+
+#sharing {
+  background-color: #0a3da3;
+  width: 100%;
+  height: 60%;
+
+  h1, p {
+    text-align: center;
+    color: white;
+  }
+
+  .flex-c {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+footer {
+  background-color: #0a3da3;
+  color: white;
+  padding: 20px;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:link {
+    color: white;
+  }
+
+
+  a:visited {
+    color: whitesmoke;
+  }
+
+ 
+  a:hover {
+    color: #66E3CA;
+  }
+
+
+  a:active {
+    color: white;
+  }
+  p {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "task": "go to cafe",
+      "priority": "High",
+      "due_date": "2025-07-20",
+      "status": "Completed",
+      "created": "2025-07-20 19:57"
+    }
+  ],
+  "expenses": []
+}

@@ -33,15 +33,25 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <link href="D:\WORKSPACES\Freecix\css\custom.css" rel="stylesheet" />
+    <style>
+      #home {
+        background-image: url("https://cdn.pixabay.com/photo/2021/12/29/14/47/water-6901805_960_720.jpg");
+      }
+
+      #feedback-section {
+        background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/seablue.jpg");
+      }
+    </style>
   </head>
   <body>
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
+    <section class="hero-section bg-image-full" id="home">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h1 class="hero-title">Welcome to Freecix</h1>
-            <p class="hero-subtitle">
+            <h1 class="hero-title text-center">Welcome to Freecix</h1>
+            <p class="hero-subtitle text-center">
               You are in the right place to find free courses you need.
             </p>
             <div class="search-form">
@@ -64,9 +74,8 @@
         </div>
       </div>
     </section>
-    <hr />
     <!-- Feature Cards Section -->
-    <section class="feature-section" id="main-menu">
+    <section class="section-primary" id="main-menu">
       <div class="container">
         <div class="row g-4">
           <div class="col-md-6">
@@ -81,7 +90,9 @@
                 Discover thousands of free educational courses across various
                 subjects and skill levels.
               </p>
-              <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+              <a href="/html/courses.html" class="btn btn-secondary"
+                >Explore Courses</a
+              >
             </div>
           </div>
           <div class="col-md-6">
@@ -104,7 +115,6 @@
         </div>
       </div>
     </section>
-    <hr />
     <!-- Contributor Section -->
     <section class="contributor-section" id="contributor-section">
       <div class="container">
@@ -165,9 +175,9 @@
         </div>
       </div>
     </section>
-    <hr />
+
     <!-- Updates Section -->
-    <section class="updates-section" id="updates-section">
+    <section class="section-primary" id="updates-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -212,9 +222,9 @@
         </div>
       </div>
     </section>
-    <hr />
+
     <!-- Feedback Section -->
-    <section class="feedback-section" id="feedback-section">
+    <section class="bg-holder-full" id="feedback-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -281,9 +291,9 @@
         </div>
       </div>
     </section>
-    <hr />
+
     <!-- CTA Section -->
-    <section class="cta-section" id="sharing">
+    <section class="section-primary mb-0" id="sharing">
       <div class="container text-center">
         <h2 class="mb-4">
           Thank you for utilizing this index and keeping your curious brain fit!
@@ -310,59 +320,57 @@
         </p>
       </div>
     </section>
-    <hr />
+
     <!-- Footer -->
-    <footer>
-      <div class="row justify-content-center">
-        <div class="col-2 col-sm-auto">
-          <ul id="l1">
-            <h2>Menu</h2>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="html/articles-main.html">Articles</a></li>
-            <li><a href="index.html#contributor">Contribute</a></li>
-            <li><a href="index.html#updates">Updates</a></li>
-          </ul>
-        </div>
-        <div class="col-2 col-sm-auto">
-          <h2>Courses</h2>
-          <ul>
-            <li><a href="/html/">in English</a></li>
-            <li><a href="html/">in Bahasa Indonesia</a></li>
-            <li><a href="/html/courses.html">Mata Pelajaran</a></li>
-            <li>
-              <a href="index.html#contributor"
-                >Submit Course in Your Language</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="col-3 col-sm-auto">
-          <h1>Support Us</h1>
-          <ul>
-            <li><a href="/">Donate</a></li>
-            <li><a href="/">Share This Site with Friends</a></li>
-            <li><a href="index.html#contributor">Become a Contributor</a></li>
-            <li><a href="index.html#feedback">Share your Feedback</a></li>
-          </ul>
-        </div>
-        <div class="col-3 col-sm-auto">
-          <h1>For Sponsors</h1>
-          <ul>
-            <li>Advertise in This Site</li>
-            <li>Start a Collaboration</li>
-          </ul>
-        </div>
-        <div class="col-2 col-sm-auto">
-          <h1>Contact Us</h1>
-          <ul>
-            <li><a href="/">Email</a></li>
-          </ul>
-        </div>
+    <div
+      class="row justify-content-center text-white bg-primary justify-content-center mt-3 my-0 p-3"
+    >
+      <div class="col-2 col-sm-auto">
+        <ul id="l1" class="text-white">
+          <h5>Menu</h5>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="html/articles-main.html">Articles</a></li>
+          <li><a href="index.html#contributor">Contribute</a></li>
+          <li><a href="index.html#updates">Updates</a></li>
+        </ul>
+      </div>
+      <div class="col-2 col-sm-auto">
+        <h5>Courses</h5>
+        <ul class="text-white">
+          <li><a href="/html/">in English</a></li>
+          <li><a href="html/">in Bahasa Indonesia</a></li>
+          <li><a href="/html/courses.html">Mata Pelajaran</a></li>
+          <li>
+            <a href="index.html#contributor">Submit Course in Your Language</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3 col-sm-auto">
+        <h5>Support Us</h5>
+        <ul class="text-white">
+          <li><a href="/">Donate</a></li>
+          <li><a href="/">Share This Site with Friends</a></li>
+          <li><a href="index.html#contributor">Become a Contributor</a></li>
+          <li><a href="index.html#feedback">Share your Feedback</a></li>
+        </ul>
+      </div>
+      <div class="col-3 col-sm-auto">
+        <h5>For Sponsors</h5>
+        <ul>
+          <li>Advertise in This Site</li>
+          <li>Start a Collaboration</li>
+        </ul>
+      </div>
+      <div class="col-2 col-sm-auto">
+        <h5>Contact Us</h5>
+        <ul>
+          <li><a href="/">Email</a></li>
+        </ul>
       </div>
       <p class="text-center mt-3">
         &copy; Freecix Team. This is a prototype page, don't expect everything
         to work properly.
       </p>
-    </footer>
+    </div>
   </body>
 </html>

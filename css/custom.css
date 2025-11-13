@@ -1,3 +1,5 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 ul {
   list-style-type: none;
@@ -32,8 +34,6 @@ a:active {
    Educational Website Theme
    ============================================ */
 
-/* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 /* ============================================
    ROOT VARIABLES - Color Palette Override
@@ -632,22 +632,16 @@ section {
 section.section-primary {
   background-color: var(--bs-primary);
   color: #ffffff;
-  border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
 }
 
 section.section-secondary {
   background-color: var(--bs-secondary);
   color: #ffffff;
-  border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
 }
 
 section.section-tertiary {
   background-color: var(--bs-tertiary);
   color: #ffffff;
-  border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
 }
 
 section.section-light {
@@ -915,6 +909,11 @@ section.section-dark p {
 
 .bg-primary {
   background-color: var(--bs-primary) !important;
+  color: #ffffff !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--bs-primary-dark) !important;
   color: #ffffff !important;
 }
 

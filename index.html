@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,25 +33,38 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
-    <link href="D:\WORKSPACES\Freecix\css\custom.css" rel="stylesheet" />
+    <link href="https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/seablue.jpg" rel="preload" as="image" type="image/jpg">
+    <link href="https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/fishclouds.jpg" rel="preload" as="image" type="image/jpg" />
+    <link href="https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/purplewithcorn.jpg" rel="preload" as="image" type="image/jpg" />
+    <link href="/css/custom.css" rel="stylesheet" />
     <style>
       #home {
-        background-image: url("https://cdn.pixabay.com/photo/2021/12/29/14/47/water-6901805_960_720.jpg");
+        background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/seablue.jpg");
       }
 
       #feedback-section {
-        background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/seablue.jpg");
+        background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/purplewithcorn.jpg");
+      }
+      #contributor-section {
+        background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/fishclouds.jpg");
+      }
+      .fix-gap {
+        margin-top:0%;
+        margin-bottom:0%;
+        margin-left: 0%;
+        margin-right: 0%;
+
       }
     </style>
   </head>
   <body>
     <!-- Hero Section -->
-    <section class="hero-section bg-image-full" id="home">
+    <section class="hero-section bg-image mt-0" id="home">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h1 class="hero-title text-center">Welcome to Freecix</h1>
-            <p class="hero-subtitle text-center">
+            <div class="text-center text-white fs-1 fw-bold ">Welcome to Freecix</div>
+            <p class="hero-subtitle text-center text-primary">
               You are in the right place to find free courses you need.
             </p>
             <div class="search-form">
@@ -75,7 +88,7 @@
       </div>
     </section>
     <!-- Feature Cards Section -->
-    <section class="section-primary" id="main-menu">
+    <section class="section-primary mt-0" id="main-menu">
       <div class="container">
         <div class="row g-4">
           <div class="col-md-6">
@@ -83,10 +96,10 @@
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=200&fit=crop"
                 alt="laptop and a cup"
-                class="feature-icon"
+                class="feature-icon fix-gap"
               />
               <h3>Courses</h3>
-              <p class="text-muted">
+              <p class="text-white">
                 Discover thousands of free educational courses across various
                 subjects and skill levels.
               </p>
@@ -103,11 +116,11 @@
                 class="feature-icon"
               />
               <h3>Articles</h3>
-              <p class="text-muted">
+              <p class="text-white">
                 Read insightful articles and educational content to enhance your
                 learning journey.
               </p>
-              <a href="articles-main.html" class="btn btn-primary"
+              <a href="/html/articles-main.html" class="btn btn-primary"
                 >Read Articles</a
               >
             </div>
@@ -116,16 +129,16 @@
       </div>
     </section>
     <!-- Contributor Section -->
-    <section class="contributor-section" id="contributor-section">
+    <section class="bg-image-parallax mt-0" id="contributor-section">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h2>Become a Contributor</h2>
-            <p class="lead">
+            <h2 class="text-white fix-gap">Become a Contributor</h2>
+            <p class="lead text-white">
               You got an interesting free course in your library that we haven't
               added yet?
             </p>
-            <p>
+            <p class="text-white">
               Fill out the form as shown in the example for us to consider! We
               will let you know once we've reviewed your entry.
             </p>
@@ -133,13 +146,14 @@
           <div class="col-lg-6">
             <div class="card border-0 shadow">
               <div class="card-body p-4">
-                <form id="forcontributor">
+                <form id="forcontributor" class="form">
                   <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input
                       type="text"
                       class="form-control"
                       id="name"
+                      autocomplete="given-name"
                       required
                     />
                   </div>
@@ -151,6 +165,7 @@
                       type="text"
                       class="form-control"
                       id="contacts"
+                      autocomplete="email"
                       required
                     />
                   </div>
@@ -165,8 +180,8 @@
                       placeholder="Course title, description, link, etc."
                     ></textarea>
                   </div>
-                  <button type="submit" class="btn btn-primary w-100">
-                    Send
+                  <button type="submit" class="btn btn-primary w-100" id="submitContributor">
+                    <a href="/html/sent.html">Send</a>
                   </button>
                 </form>
               </div>
@@ -177,31 +192,31 @@
     </section>
 
     <!-- Updates Section -->
-    <section class="section-primary" id="updates-section">
+    <section class="section-primary mt-0" id="updates-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
             <img
               src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=500&h=300&fit=crop"
               alt="a man looking at a laptop"
-              class="img-fluid rounded"
+              class="img-fluid rounded fix-gap"
             />
           </div>
           <div class="col-lg-6">
             <h2>Update Logs</h2>
             <div class="update-month">
               <h5>June 2025</h5>
-              <ul class="update-list">
+              <ol class="update-list">
                 <li>Website creation flow was created</li>
                 <li>Gathering first batch of courses to be indexed</li>
                 <li>Designing user interface</li>
                 <li>Inviting new team members</li>
                 <li>Website name changed to Freecix (Free Courses Index)</li>
-              </ul>
+              </ol>
             </div>
             <div class="update-month">
               <h5>May 2025</h5>
-              <ul class="update-list">
+              <ol class="update-list">
                 <li>Repository for AEP website was created</li>
                 <li>Github Pages activated</li>
                 <li>
@@ -210,13 +225,46 @@
                 <li>
                   Existing team members listing down things that need to be done
                 </li>
-              </ul>
+              </ol>
             </div>
             <div class="update-month">
-              <h5>July 2025 - April 2026</h5>
-              <ul class="update-list">
+              <h5>July 2025</h5>
+              <ol class="update-list">
+                <li>None</li>
+              </ol>
+            </div>
+            <div class="update-month">
+              <h5>August 2025</h5>
+              <ol class="update-list">
+                <li>Mild modification to tidy up the page</li>
+              </ol>
+            </div>
+            <div class="update-month">
+              <h5>September 2025</h5>
+              <ol class="update-list">
+                <li>Backed up latest addition to GitHub</li>
+              </ol>
+            </div>
+            <div class="update-month">
+              <h5>October 2025</h5>
+              <ol class="update-list">
+                <li>None</li>
+              </ol>
+            </div>
+            <div class="update-month">
+              <h5>November 2025</h5>
+              <ol class="update-list">
+                <li>Integrated bootstrap</li>
+                <li>Added custom CSS override</li>
+                <li>Make the links work</li>
+                <li>Finishing this prototype page</li>
+              </ol>
+            </div>
+            <div class="update-month">
+              <h5>December 2025</h5>
+              <ol class="update-list">
                 <li>Coming soon...</li>
-              </ul>
+              </ol>
             </div>
           </div>
         </div>
@@ -224,11 +272,11 @@
     </section>
 
     <!-- Feedback Section -->
-    <section class="bg-holder-full" id="feedback-section">
+    <section class="bg-image-parallax mt-0" id="feedback-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <div class="text-center mb-5">
+            <div class="text-center text-white mb-5">
               <h2>Send Feedback</h2>
               <p class="lead">
                 What can we do to make this website better?<br />We would really
@@ -249,6 +297,7 @@
                           class="form-control"
                           id="feedback-name"
                           required
+                          autocomplete="given-name"
                         />
                       </div>
                     </div>
@@ -268,6 +317,7 @@
                       class="form-control"
                       id="feedback-contacts"
                       required
+                      autocomplete="email"
                     />
                   </div>
                   <div class="mb-3">
@@ -281,7 +331,7 @@
                       placeholder="Tell us your thoughts..."
                     ></textarea>
                   </div>
-                  <button type="submit" class="btn btn-primary w-100">
+                  <button type="submit" class="btn btn-primary w-100" id="submitFeedback" href="/html/sent.html">
                     Send Feedback
                   </button>
                 </form>
@@ -293,9 +343,9 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section-primary mb-0" id="sharing">
+    <section class="section-primary mt-0" id="sharing">
       <div class="container text-center">
-        <h2 class="mb-4">
+        <h2 class="mb-4 fix-gap">
           Thank you for utilizing this index and keeping your curious brain fit!
         </h2>
         <p class="lead mb-4">
@@ -304,13 +354,13 @@
           gap of opportunities between the rich and poor. Because of that,
           spreading the word about free educational programs is very important.
         </p>
-        <p class="mb-4"><strong>Take action today:</strong></p>
-        <div class="cta-buttons">
-          <button class="btn">Share with Friends</button>
-          <button class="btn">Become a Contributor</button>
-          <button class="btn">Send a Feedback</button>
-          <button class="btn">Donate</button>
-        </div>
+        <p class="mb-4 text-center"><strong>Take action today:</strong></p>
+        <ul class="text-center">
+          <li><button class="btn btn-tertiary" href="/html/oops.html">Share with Friends</button></li><br />
+          <li><button class="btn btn-tertiary" href="/index.html#contributor-section">Become a Contributor</button></li><br />
+          <li><button class="btn btn-tertiary" href="/index.html#feedback-section">Send a Feedback</button></li><br />
+          <li><button class="btn btn-tertiary" href="/html/oops.html">Donate</button></li>
+        </ul>
         <p class="mt-4">
           <small
             >Every action counts. Your donations will be used for further
@@ -323,48 +373,48 @@
 
     <!-- Footer -->
     <div
-      class="row justify-content-center text-white bg-primary justify-content-center mt-3 my-0 p-3"
+      class="row justify-content-center text-white bg-primary-dark justify-content-center mt-0 my-0 p-3"
     >
       <div class="col-2 col-sm-auto">
         <ul id="l1" class="text-white">
           <h5>Menu</h5>
-          <li><a href="index.html#home">Home</a></li>
-          <li><a href="html/articles-main.html">Articles</a></li>
-          <li><a href="index.html#contributor">Contribute</a></li>
-          <li><a href="index.html#updates">Updates</a></li>
+          <li><a href="/index.html#home">Home</a></li>
+          <li><a href="/html/articles-main.html">Articles</a></li>
+          <li><a href="/index.html#contributor-section">Contribute</a></li>
+          <li><a href="/index.html#updates-section">Updates</a></li>
         </ul>
       </div>
       <div class="col-2 col-sm-auto">
-        <h5>Courses</h5>
         <ul class="text-white">
-          <li><a href="/html/">in English</a></li>
-          <li><a href="html/">in Bahasa Indonesia</a></li>
+          <li><h5>Courses</h5></li>
+          <li><a href="/html/courses.html#en">in English</a></li>
+          <li><a href="/html/courses.html#id">in Bahasa Indonesia</a></li>
           <li><a href="/html/courses.html">Mata Pelajaran</a></li>
           <li>
-            <a href="index.html#contributor">Submit Course in Your Language</a>
+            <a href="/index.html#contributor-section">Submit Course in Your Language</a>
           </li>
         </ul>
       </div>
       <div class="col-3 col-sm-auto">
-        <h5>Support Us</h5>
         <ul class="text-white">
-          <li><a href="/">Donate</a></li>
-          <li><a href="/">Share This Site with Friends</a></li>
-          <li><a href="index.html#contributor">Become a Contributor</a></li>
-          <li><a href="index.html#feedback">Share your Feedback</a></li>
+          <li><h5>Support Us</h5></li>
+          <li><a href="/index.html#sharing">Donate</a></li>
+          <li><a href="index.html#sharing">Share This Site with Friends</a></li>
+          <li><a href="/index.html#contributor-section">Become a Contributor</a></li>
+          <li><a href="/index.html#feedback-section">Share your Feedback</a></li>
         </ul>
       </div>
       <div class="col-3 col-sm-auto">
-        <h5>For Sponsors</h5>
         <ul>
-          <li>Advertise in This Site</li>
-          <li>Start a Collaboration</li>
+          <li><h5>For Sponsors</h5></li>
+          <li><a href="/html/oops.html">Advertise in This Site</a></li>
+          <li><a href="/html/oops.html">Start a Collaboration</a></li>
         </ul>
       </div>
       <div class="col-2 col-sm-auto">
-        <h5>Contact Us</h5>
         <ul>
-          <li><a href="/">Email</a></li>
+          <li></li><h5>Contact Us</h5></li>
+          <li><a href="/html/oops.html">Email</a></li>
         </ul>
       </div>
       <p class="text-center mt-3">

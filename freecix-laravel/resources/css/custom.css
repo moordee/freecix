@@ -1,21 +1,50 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+ul {
+  list-style-type: none;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a30a45;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
 /* ============================================
    BOOTSTRAP CUSTOM OVERRIDE - CUSTOM.CSS
    Educational Website Theme
    ============================================ */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 /* ============================================
    ROOT VARIABLES - Color Palette Override
    ============================================ */
 :root {
   /* Primary Colors */
-  --bs-primary: #0A3DA3;
+  --bs-primary: #0a3da3;
   --bs-primary-rgb: 10, 61, 163;
-  --bs-secondary: #A30A45;
+  --bs-secondary: #a30a45;
   --bs-secondary-rgb: 163, 10, 69;
-  --bs-tertiary: #66E3CA;
+  --bs-tertiary: #66e3ca;
   --bs-tertiary-rgb: 102, 227, 202;
 
   /* Complementary shades for primary */
@@ -34,12 +63,12 @@
   --bs-tertiary-lighter: #b6f2e8;
 
   /* Link Colors */
-  --bs-link-color: #0A3DA3;
+  --bs-link-color: #0a3da3;
   --bs-link-hover-color: #072d7a;
 
   /* Font Families */
-  --bs-font-heading: 'Ubuntu', sans-serif;
-  --bs-font-body: 'Open Sans', sans-serif;
+  --bs-font-heading: "Ubuntu", sans-serif;
+  --bs-font-body: "Open Sans", sans-serif;
   --bs-body-font-family: var(--bs-font-body);
 }
 
@@ -48,9 +77,24 @@
    ============================================ */
 
 /* Apply Ubuntu to all heading elements */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6,
-.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6,
 .navbar-brand,
 .card-title,
 .modal-title,
@@ -63,7 +107,17 @@ h1, h2, h3, h4, h5, h6,
 
 /* Apply Open Sans to body and all other elements */
 body,
-p, span, div, a, li, td, th, label, input, textarea, select,
+p,
+span,
+div,
+a,
+li,
+td,
+th,
+label,
+input,
+textarea,
+select,
 .card-text,
 .form-control,
 .form-select,
@@ -572,29 +626,22 @@ section {
   justify-content: center;
   padding: 4rem 0;
   position: relative;
-  margin: 0;
 }
 
 /* Section Variants with White Text */
 section.section-primary {
   background-color: var(--bs-primary);
   color: #ffffff;
-  border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
 }
 
 section.section-secondary {
   background-color: var(--bs-secondary);
   color: #ffffff;
-  border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
 }
 
 section.section-tertiary {
   background-color: var(--bs-tertiary);
   color: #ffffff;
-  border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
 }
 
 section.section-light {
@@ -631,7 +678,9 @@ section .container-fluid {
 }
 
 /* Section Headings */
-section h1, section h2, section h3 {
+section h1,
+section h2,
+section h3 {
   margin-bottom: 1.5rem;
 }
 
@@ -705,7 +754,7 @@ section.section-dark p {
 /* Overlay variants for better text readability */
 .bg-image-overlay::before,
 .bg-image-parallax.bg-image-overlay::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -716,7 +765,7 @@ section.section-dark p {
 }
 
 .bg-image-overlay-dark::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -727,7 +776,7 @@ section.section-dark p {
 }
 
 .bg-image-overlay-light::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -738,7 +787,7 @@ section.section-dark p {
 }
 
 .bg-image-overlay-primary::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -749,7 +798,7 @@ section.section-dark p {
 }
 
 .bg-image-overlay-secondary::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -760,7 +809,7 @@ section.section-dark p {
 }
 
 .bg-image-overlay-tertiary::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -863,6 +912,11 @@ section.section-dark p {
   color: #ffffff !important;
 }
 
+.bg-primary-dark {
+  background-color: var(--bs-primary-dark) !important;
+  color: #ffffff !important;
+}
+
 .bg-secondary {
   background-color: var(--bs-secondary) !important;
   color: #ffffff !important;
@@ -925,14 +979,29 @@ section.section-dark p {
    ============================================ */
 
 @media (max-width: 1200px) {
-  h1, .h1 { font-size: 2.5rem; }
-  h2, .h2 { font-size: 2rem; }
+  h1,
+  .h1 {
+    font-size: 2.5rem;
+  }
+  h2,
+  .h2 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  h1, .h1 { font-size: 2rem; }
-  h2, .h2 { font-size: 1.75rem; }
-  h3, .h3 { font-size: 1.5rem; }
+  h1,
+  .h1 {
+    font-size: 2rem;
+  }
+  h2,
+  .h2 {
+    font-size: 1.75rem;
+  }
+  h3,
+  .h3 {
+    font-size: 1.5rem;
+  }
 
   .btn {
     padding: 0.5rem 1rem;
@@ -941,9 +1010,18 @@ section.section-dark p {
 }
 
 @media (max-width: 576px) {
-  h1, .h1 { font-size: 1.75rem; }
-  h2, .h2 { font-size: 1.5rem; }
-  h3, .h3 { font-size: 1.25rem; }
+  h1,
+  .h1 {
+    font-size: 1.75rem;
+  }
+  h2,
+  .h2 {
+    font-size: 1.5rem;
+  }
+  h3,
+  .h3 {
+    font-size: 1.25rem;
+  }
 }
 
 /* ============================================
@@ -982,7 +1060,10 @@ section.section-dark p {
     page-break-inside: avoid;
   }
 
-  .btn, .navbar, .modal, .tooltip {
+  .btn,
+  .navbar,
+  .modal,
+  .tooltip {
     display: none !important;
   }
 

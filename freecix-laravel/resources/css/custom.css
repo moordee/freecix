@@ -572,6 +572,7 @@ section {
   justify-content: center;
   padding: 4rem 0;
   position: relative;
+  margin: 0;
 }
 
 /* Section Variants with White Text */

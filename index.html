@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Free educational courses online for all students"
+      content="Freecix is an online study resource website where students, self-learners, and anyone curious can find an extensive list of online courses, video lessons, and downloadable study materials — all completely free. We make it simple: no guessing if it’s a trial or fully free. Just pick what interests you and start learning. Our community helps each other expand the list, making studying easier for everyone. Heck, you can even join in too!"
     />
     <meta
       name="keywords"
-      content="Free Courses, Psychology, English, Arabic, Russian, science articles, fun facts, activities, freecix, Free Courses, Psychology, English, Arabic, Russian, science articles, fun facts, activities, freecix"
+      content="Free Courses, Psychology, English, Arabic, Russian, science articles, fun facts, activities, freecix, Free Courses, Psychology, English, Arabic, Russian, science articles, fun facts, activities, freecix, Freecix offers free online courses, free study resources, free video lessons, and downloadable study materials. Explore online learning free, self-learning resources, free educational content, and free e-learning opportunities. Take advantage of student study tools, online classes free, free academic resources, and a free learning platform. Browse our free course directory, free tutorials online, free online lessons, free study guides, and free educational videos. Access online courses no charge, 100% free courses, free study website, and free learning resources. Dive into free online modules, free skill-building courses, free educational PDFs, and free open learning. Experience community-driven learning on our collaborative learning platform with free exam prep resources, free subject lessons, and student-friendly free courses. Participate in free online training, free course listings, learn online free, and use free self-study materials. Explore our free knowledge base, free course hub, free online tutorials, free learning guides, and online study resources free. Discover free personal development courses, free video tutorials, open-access online courses, and our free education platform. Join free online workshops, free learning network, free study community, online education resources free, free course collections, free learning library, and start studying free."
     />
     <meta name="author" content="Free Courses Index team" />
-    <title>Freecix - Free Courses Index</title>
+    <title>Freecix: Landing Page</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -39,29 +39,16 @@
       as="image"
       type="image/jpg"
     />
-    <link
-      href="https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/fishclouds.jpg"
-      rel="preload"
-      as="image"
-      type="image/jpg"
-    />
-    <link
-      href="https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/purplewithcorn.jpg"
-      rel="preload"
-      as="image"
-      type="image/jpg"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="css/custom.css" rel="stylesheet" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="img/favicon/favicon_plain_round.png"
+    />
     <style>
       #home {
         background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/seablue.jpg");
-      }
-
-      #feedback-section {
-        background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/purplewithcorn.jpg");
-      }
-      #contributor-section {
-        background-image: url("https://raw.githubusercontent.com/moordee/freecix/refs/heads/main/fishclouds.jpg");
       }
       .fix-gap {
         margin-top: 0%;
@@ -72,298 +59,374 @@
     </style>
   </head>
   <body>
-    <!-- Hero Section -->
-    <section class="hero-section bg-image mt-0" id="home">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="text-center text-white fs-1 fw-bold">
-              Welcome to Freecix
-            </div>
-            <p class="hero-subtitle text-center text-primary">
-              You are in the right place to find free courses you need.
-            </p>
-            <div class="search-form">
-              <form>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control search-input"
-                    placeholder="Browse our course database"
-                    name="searchform"
-                    id="searchform"
-                  />
-                  <button class="btn btn-light" type="submit">
-                    <i class="bi bi-search"></i>
-                  </button>
+    <header>
+      <nav
+        class="navbar navbar-expand-sm navbar-light bg-primary sticky-top d-flex align-items-center px-3"
+      >
+        <a
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <img src="img/Offcanvas-Toggler-Blue.png" class="icon-sm" />
+        </a>
+        <a class="p-sm-2" href="https://landing-freecix.onrender.com">
+          <img
+            class="navbar-brand"
+            src="img/freecix-magenta-transparent.png"
+            style="width: 60%; height: 60%"
+          />
+        </a>
+        <a
+          class="ms-sm-auto p-sm-2"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample2"
+          aria-controls="offcanvasExample"
+        >
+          <img src="img/Globe.png" class="icon-sm" />
+        </a>
+      </nav>
+      <div
+        class="offcanvas offcanvas-start bg-primary-dark border-white"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            Find out more:
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <ul>
+              <li class="p-2 mb-3">
+                <div class="card text-white bg-dark">
+                  <div class="card-body">
+                    <a
+                      class="link-white-magenta"
+                      href="https://github.com/moordee/freecix"
+                      target="_blank"
+                      ><img class="icon mx-2" src="img/githubLogo.png" /> GitHub
+                      Repository</a
+                    >
+                  </div>
                 </div>
-              </form>
+              </li>
+              <li class="p-2 mb-3">
+                <div class="card text-white bg-dark">
+                  <div class="card-body">
+                    <a
+                      class="link-white-magenta"
+                      href="https://landing-freecix.onrender.com"
+                      target="_blank"
+                      ><img class="icon mx-2" src="img/renderLogo.jpg" />
+                      Landing Page</a
+                    >
+                  </div>
+                </div>
+              </li>
+              <li class="p-2">
+                <div class="card text-white bg-dark">
+                  <div class="card-body">
+                    <a
+                      class="link-white-magenta"
+                      href="mailto:freecix@proton.me"
+                      target="_blank"
+                      ><img
+                        class="icon mx-2"
+                        src="img/icons8-email-100.png"
+                        alt="https://icons8.com/icon/12580/email"
+                      />
+                      Send an Email</a
+                    >
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="offcanvas offcanvas-end bg-primary-dark border-white"
+        tabindex="-1"
+        id="offcanvasExample2"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            Select a language:
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <div class="container">
+              <ul>
+                <li class="p-1 mb-1">
+                  <div class="card text-white bg-primary">
+                    <div class="card-body">
+                      <a class="link-white-magenta" href="index.html"
+                        ><img
+                          class="icon-sm mx-2"
+                          src="img/country_icon/usa-48.png"
+                          alt="https://icons8.com/icon/aRiu1GGi6Aoe/usa "
+                        />English</a
+                      >
+                    </div>
+                  </div>
+                </li>
+                <li class="p-1 mb-1">
+                  <div class="card text-white bg-primary">
+                    <div class="card-body">
+                      <a class="link-white-magenta" href="landing-id.html"
+                        ><img
+                          class="icon-sm mx-2"
+                          src="img/country_icon/indonesia-48.png"
+                          alt="https://icons8.com/icon/lph_obIfg-jT/indonesia"
+                        />
+                        Bahasa Indonesia</a
+                      >
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+    </header>
+
+    <section class="section-dark text-center spray-fullwidth-container">
+      <div
+        class="spray-fullwidth spray-fullwidth-bottom-center spray-fullwidth-100 spray-fullwidth-opacity-60"
+        style="background-image: url('img/blueFuller_bg.png')"
+      ></div>
+      <div class="container text-content">
+        <h1 class="fw-bold fs-1">
+          You Like Study Resources<br />That Are Completely<br />
+          Free?
+        </h1>
+        <p class="fs-4 fw-normal mt-2">So are we.</p>
+        <a
+          href="index.html#Contributor"
+          class="btn btn-secondary-solid mt-2 fs-5 fw-normal"
+          style="text-decoration: none"
+          >Let's put it together</a
+        >
+      </div>
     </section>
-    <!-- Feature Cards Section -->
-    <section class="section-primary mt-0" id="main-menu">
+
+    <section class="section-primary">
       <div class="container">
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card border-0 shadow h-100 bg-primary">
-              <div class="card-body d-flex flex-column">
-                <img
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=200&fit=crop"
-                  alt="laptop and a cup"
-                  class="card-img-top"
-                  style="object-fit: cover; height: 200px;"
-                />
-                <h3 class="card-title mt-3">Courses</h3>
-                <p class="card-text text-white flex-grow-1">
-                  Discover thousands of free educational courses across various
-                  subjects and skill levels.
-                </p>
-                <a href="html/courses.html" class="btn btn-primary align-self-start"
-                  >Explore Courses</a
-                >
-              </div>
-            </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2">
+          <div class="col">
+            <p class="fw-normal fs-4 justify-content-md-center p-3">
+              Freecix is an online study resource website where students,
+              self-learners, and anyone curious can find an extensive list of
+              online courses, video lessons, and downloadable study materials —
+              all completely free. We make it simple: no guessing if it’s a
+              trial or fully free. Just pick what interests you and start
+              learning. Our community helps each other expand the list, making
+              studying easier for everyone. Heck, you can even join in too!
+            </p>
           </div>
-          <div class="col-md-6">
-            <div class="card border-0 shadow h-100 bg-primary">
-              <div class="card-body d-flex flex-column">
+          <div class="col storyset-center-xy">
+            <video
+              class="img-fluid"
+              src="vid/Studying.mp4"
+              type="video/mp4"
+              alt="https://storyset.com/education"
+              autoplay
+              muted
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark spray-fullwidth-container">
+      <div
+        class="spray-fullwidth spray-fullwidth-bottom-center spray-fullwidth-100 spray-fullwidth-opacity-60"
+        style="background-image: url('img/blueFuller_bg.png')"
+      ></div>
+      <div class="container">
+        <h2 class="fw-bold text-center mt-3 mb-3 text-content">What we plan to cover:</h2>
+        <div class="row row-cols-md-3 mt-5">
+          <div class="col">
+            <div class="card border-light bg-primary">
               <img
-                src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=200&fit=crop"
-                alt="a bunch of papers and an eyeglass"
                 class="card-img-top"
-                style="object-fit: cover; height: 200px;"
+                src="https://cdn.pixabay.com/photo/2019/12/29/19/40/online-4727942_1280.jpg"
+                alt="Image by Tumisu from Pixabay"
               />
-              <h3 class="card-title mt-3">Articles</h3>
-              <p class="card-text text-white flex-grow-1">
-                Read insightful articles and educational content to enhance your
-                learning journey.
-              </p>
-              <a href="html/articles-main.html" class="btn btn-primary align-self-start"
-                >Read Articles</a
-              >
+              <div class="card-body">
+                <h4 class="card-title fw-bold fs-3">Online<br />Courses</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-light bg-primary">
+              <img
+                class="card-img-top"
+                src="https://cdn.pixabay.com/photo/2018/04/16/09/33/literature-3324039_1280.jpg"
+                alt="Image by Thornstel Frenzen from Pixabay"
+              />
+              <div class="card-body">
+                <h4 class="card-title fw-bold fs-3">
+                  Study<br />Resource<br />Documents
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-light bg-primary">
+              <img
+                class="card-img-top"
+                src="https://cdn.pixabay.com/photo/2020/07/23/15/06/mobile-phone-5431597_1280.jpg"
+                alt="Image by Claudia Dewald on Pixabay"
+              />
+              <div class="card-body">
+                <h4 class="card-title fw-bold fs-3">Video<br />Lessons</h4>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Contributor Section -->
-    <section class="bg-image-parallax mt-0" id="contributor-section">
+
+    <section class="section-primary">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h2 class="text-white fix-gap">Become a Contributor</h2>
-            <p class="lead text-white">
-              You got an interesting free course in your library that we haven't
-              added yet?
-            </p>
-            <p class="text-white">
-              Fill out the form as shown in the example for us to consider! We
-              will let you know once we've reviewed your entry.
+        <div class="row row row-cols-1 row-cols-sm-2">
+          <div class="col">
+            <h2 class="fw-bold text-start mt-3 mb-3">The Vision:</h2>
+            <p class="fw-normal fs-4 justify-content-md-center p-3">
+              <strong>Free Resources</strong><br />
+              Build a library of online courses, videos, and study materials for
+              everyone.<br />
+              <strong>Make Learning Easy</strong><br />
+              Share tips and -resources to simplify studying.<br />
+              <strong>Connect & Collaborate</strong><br />
+              Join a community of students and self-learners.<br />
+              <strong>Have Fun Learning</strong><br />
+              Engage, explore, and make studying more enjoyable.
             </p>
           </div>
-          <div class="col-lg-6">
-            <div class="card border-0 shadow">
-              <div class="card-body p-4">
-                <form id="forcontributor" class="form">
+          <div class="col storyset-center-xy">
+            <video
+              class="img-fluid"
+              src="vid/Vision board.mp4"
+              type="video/mp4"
+              alt="https://storyset.com/worker"
+              autoplay
+              muted
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Contributor" class="section-dark spray-fullwidth-container">
+      <div
+        class="spray-fullwidth spray-fullwidth-bottom-center spray-fullwidth-100 spray-fullwidth-opacity-60"
+        style="background-image: url('img/blueFuller_bg.png')"
+      ></div>
+      <div class="container">
+        <div class="row row row-cols-1 row-cols-sm-2 row-cols-md-2">
+          <div class="col">
+            <h2 class="fw-bold text-start my-3 pt-2 text-content">Become a Contributor</h2>
+            <p class="w-normal fs-4 justify-content-md-center p-3 text-content">
+              Freecix is at the beginning of its journey, and you can help
+              create a space where learning becomes easier for everyone. By
+              contributing your favorite resources, you help others study,
+              explore, and grow. You’ll also discover new materials, strengthen
+              your own skills, and become part of a community built on curiosity
+              and generosity. If you believe in accessible education and want to
+              make a difference, we’d love to have you with us as we build
+              Freecix together.
+            </p>
+          </div>
+          <div class="col">
+            <div class="card bg-light">
+              <div class="card-body">
+                <form id="become-contributor">
                   <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="name"
-                      autocomplete="given-name"
+                      name="entry.1836001410"
+                      id="nameInput"
+                      placeholder="doesn't have to be real name"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="contacts" class="form-label"
-                      >Email/Number/Telegram</label
-                    >
+                    <label for="country" class="form-label">Country</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="contacts"
-                      autocomplete="email"
+                      name="entry.1296502657"
+                      id="countryInput"
+                      placeholder="country you're currently in"
                       required
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="content" class="form-label"
-                      >Tell us about the course!</label
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="entry.1845679844"
+                      id="emailInput"
+                      placeholder="example@mail.com"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="contributor-reason" class="form-label"
+                      >What type of contribution would you like to make?</label
                     >
                     <textarea
                       class="form-control"
-                      id="content"
+                      name="entry.1901707206"
+                      id="typeInput"
                       rows="3"
-                      placeholder="Course title, description, link, etc."
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-primary w-100"
-                    id="submitContributor"
-                  >
-                    <a href="html/sent.html">Send</a>
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Updates Section -->
-    <section class="section-primary mt-0" id="updates-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <img
-              src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=500&h=300&fit=crop"
-              alt="a man looking at a laptop"
-              class="img-fluid rounded fix-gap"
-            />
-          </div>
-          <div class="col-lg-6">
-            <h2>Update Logs</h2>
-            <div class="update-month">
-              <h5>June 2025</h5>
-              <ol class="update-list">
-                <li>Website creation flow was created</li>
-                <li>Gathering first batch of courses to be indexed</li>
-                <li>Designing user interface</li>
-                <li>Inviting new team members</li>
-                <li>Website name changed to Freecix (Free Courses Index)</li>
-              </ol>
-            </div>
-            <div class="update-month">
-              <h5>May 2025</h5>
-              <ol class="update-list">
-                <li>Repository for AEP website was created</li>
-                <li>Github Pages activated</li>
-                <li>
-                  Idea for Accessible Educational Programs (AEP) was formulated
-                </li>
-                <li>
-                  Existing team members listing down things that need to be done
-                </li>
-              </ol>
-            </div>
-            <div class="update-month">
-              <h5>July 2025</h5>
-              <ol class="update-list">
-                <li>None</li>
-              </ol>
-            </div>
-            <div class="update-month">
-              <h5>August 2025</h5>
-              <ol class="update-list">
-                <li>Mild modification to tidy up the page</li>
-              </ol>
-            </div>
-            <div class="update-month">
-              <h5>September 2025</h5>
-              <ol class="update-list">
-                <li>Backed up latest addition to GitHub</li>
-              </ol>
-            </div>
-            <div class="update-month">
-              <h5>October 2025</h5>
-              <ol class="update-list">
-                <li>None</li>
-              </ol>
-            </div>
-            <div class="update-month">
-              <h5>November 2025</h5>
-              <ol class="update-list">
-                <li>Integrated bootstrap</li>
-                <li>Added custom CSS override</li>
-                <li>Make the links work</li>
-                <li>Finishing this prototype page</li>
-              </ol>
-            </div>
-            <div class="update-month">
-              <h5>December 2025</h5>
-              <ol class="update-list">
-                <li>Coming soon...</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feedback Section -->
-    <section class="bg-image-parallax mt-0" id="feedback-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="text-center text-white mb-5">
-              <h2>Send Feedback</h2>
-              <p class="lead">
-                What can we do to make this website better?<br />We would really
-                appreciate your feedback.
-              </p>
-            </div>
-            <div class="card border-0 shadow">
-              <div class="card-body p-4">
-                <form id="form_feedback">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label for="feedback-name" class="form-label"
-                          >Name</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="feedback-name"
-                          required
-                          autocomplete="given-name"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="feedback-contacts" class="form-label"
-                      >Email/Number/Telegram</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="feedback-contacts"
+                      placeholder="example: I want to help expand the index by adding free courses and study resources that I already know, but haven't been listed here yet."
                       required
-                      autocomplete="email"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="feedback-form" class="form-label"
-                      >Feedback</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="feedback-form"
-                      rows="4"
-                      placeholder="Tell us your thoughts..."
                     ></textarea>
                   </div>
-                  <button
-                    type="submit"
-                    class="btn btn-primary w-100"
-                    id="submitFeedback"
-                  >
-                    <a href="html/sent.html">Send Feedback</a>
-                  </button>
+                  <div class="d-grid gap-2">
+                    <div class="mb-3">
+                      <label for="select" name="platform" class="form-label"
+                        >Which platform are you most comfortable with?</label
+                      >
+                      <select
+                        class="form-select"
+                        aria-label="Default select example"
+                        name="entry.680028269"
+                        id="formSelect"
+                      >
+                        <option selected>Select one</option>
+                        <option value="Telegram">Telegram</option>
+                        <option value="Discord">Discord</option>
+                      </select>
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-secondary">
+                      Submit
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
@@ -372,113 +435,137 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section-primary mt-0" id="sharing">
-      <div class="container text-center">
-        <h2 class="mb-4 fix-gap">
-          Thank you for utilizing this index and keeping your curious brain fit!
-        </h2>
-        <p class="lead mb-4">
-          We understand that it's not always easy to find quality courses on the
-          internet. Moreover, the commodification of education has widened the
-          gap of opportunities between the rich and poor. Because of that,
-          spreading the word about free educational programs is very important.
-        </p>
-        <p class="mb-4 text-center"><strong>Take action today:</strong></p>
-        <ul class="text-center">
-          <li>
-            <button class="btn btn-tertiary"><a href="html/oops.html"
-              >Share with Friends</a
-            ></button>
-          </li>
-          <br />
-          <li>
-            <button class="btn btn-tertiary"><a href="index.html#contributor-section">
-              Become a Contributor</a
-            ></button>
-          </li>
-          <br />
-          <li>
-            <button class="btn btn-tertiary"><a href="index.html#feedback-section">
-              Send a Feedback</a
-            ></button>
-          </li>
-          <br />
-          <li><button class="btn btn-tertiary"><a href="html/oops.html">Donate</a></button></li>
-        </ul>
-        <p class="mt-4">
-          <small
-            >Every action counts. Your donations will be used for further
-            development, improvement, and keeping the team who constantly update
-            this site alive.</small
-          >
-        </p>
+    <section class="section-primary">
+      <h2 class="fw-bold text-center mt-3 mb-3">FAQs</h2>
+      <div class="container mt-3">
+        <div class="accordion accordion-dark-solid" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                What is Freecix, anyway?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Freecix - stands for Free Courses Index. We aim to index free
+                study resources and remove the hassle of guessing
+                what-type-of-free trial & error for learners.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-3">
+        <div class="accordion accordion-dark-solid" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                When would this index be ready to launch?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Around early 2026, somewhere between January to June. Could be
+                faster with your contributor help, though :D
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      document
+        .getElementById("become-contributor")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("nameInput").value;
+          const country = document.getElementById("countryInput").value;
+          const email = document.getElementById("emailInput").value;
+          const message = document.getElementById("typeInput").value;
+          const platform = document.getElementById("formSelect").value;
+
+          // Replace with your form's action URL
+          const formURL =
+            "https://docs.google.com/forms/u/0/d/e/1FAIpQLScckXKDbKOW6Udfz3jQix2cm9N6oFpIwJU7g8ZeUIJD2Q65Eg/formResponse";
+
+          // Replace entry.xxxxxxx with your field IDs
+          const data = new FormData();
+          data.append("entry.1836001410", name);
+          data.append("entry.1296502657", country);
+          data.append("entry.1845679844", email);
+          data.append("entry.1901707206", message);
+          data.append("entry.680028269", platform);
+
+          fetch(formURL, {
+            method: "POST",
+            body: data,
+            mode: "no-cors", // required to avoid CORS errors
+          })
+            .then(() => {
+              Swal.fire({
+                title: "Thank you",
+                text: "We will get back to you with the right Contribution form based on your described preferences in 2-4 days.",
+                icon: "success",
+                theme: "dark",
+              });
+              document.getElementById("become-contributor").reset();
+            })
+            .catch((err) => {
+              alert(
+                "Something is wrong. Make sure you complete filling the form and have a good internet connection." +
+                  err
+              );
+            });
+        });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Footer -->
     <footer
       class="justify-content-center text-white bg-primary-dark mt-0 my-0 p-3"
     >
       <div class="container">
-        <div class="row">
-          <div class="col-sm-2">
-            <ul id="l1" class="text-white">
-              <h5>Menu</h5>
-              <li><a href="index.html#home">Home</a></li>
-              <li><a href="html/articles-main.html">Articles</a></li>
-              <li><a href="index.html#contributor-section">Contribute</a></li>
-              <li><a href="index.html#updates-section">Updates</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-2">
-            <ul class="text-white">
-              <li><h5>Courses</h5></li>
-              <li><a href="html/courses.html#en">in English</a></li>
-              <li><a href="html/courses.html#id">in Bahasa Indonesia</a></li>
-              <li><a href="html/courses.html">Mata Pelajaran</a></li>
-              <li>
-                <a href="index.html#contributor-section"
-                  >Submit Course in Your Language</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-sm-3">
-            <ul class="text-white">
-              <li><h5>Support Us</h5></li>
-              <li><a href="index.html#sharing">Donate</a></li>
-              <li>
-                <a href="index.html#sharing">Share This Site with Friends</a>
-              </li>
-              <li>
-                <a href="index.html#contributor-section"
-                  >Become a Contributor</a
-                >
-              </li>
-              <li>
-                <a href="index.html#feedback-section">Share your Feedback</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-sm-3">
-            <ul>
-              <li><h5>For Sponsors</h5></li>
-              <li><a href="html/oops.html">Advertise in This Site</a></li>
-              <li><a href="html/oops.html">Start a Collaboration</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-2">
-            <ul>
-              <li><h5>Contact Us</h5></li>
-              <li><a href="html/oops.html">Email</a></li>
-            </ul>
-          </div>
-          <p class="text-center mt-3">
-            &copy; Freecix Team. This is a prototype page, don't expect
-            everything to work properly.
-          </p>
-        </div>
+        <p class="text-center mt-3">
+          &copy;2025 Freecix Team.
+          <a class="link-white-magenta" href="mailto:freecix@proton.me"
+            >Contact us here.</a
+          >
+        </p>
       </div>
     </footer>
   </body>

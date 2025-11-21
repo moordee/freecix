@@ -1,6 +1,61 @@
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
+.text-content {
+  position: relative;
+  z-index: 5; /* higher than the spray */
+}
+/* Center horizontally */
+.storyset-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+/* Center vertically (requires the parent row/col to have height) */
+.storyset-center-y {
+  display: flex;
+  align-items: center;
+}
+
+/* Center both horizontally + vertically */
+.storyset-center-xy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional: control Storyset max width */
+.storyset-responsive {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  align-self: flex-start;
+}
+
+.icon-round {
+  width: 64px;
+  height: 64px;
+  align-self: flex-start;
+  border-radius: 10px;
+}
+
+.icon-sm {
+  width: 34px;
+  height: 34px;
+  align-self: flex-start;
+}
+
+.icon-end {
+  width: 100px;
+  height: 100px;
+  align-self: flex-end;
+}
+
 ul {
   list-style-type: none;
 }
@@ -29,11 +84,23 @@ a:active {
   text-decoration: none;
 }
 
+/* Custom link style: white by default, magenta on hover */
+.link-white-magenta {
+  color: #ffffff; /* default white */
+  text-decoration: none; /* no underline */
+  transition: color 0.3s; /* smooth color change */
+}
+
+.link-white-magenta:hover,
+.link-white-magenta:focus {
+  color: #a30a45; /* magenta on hover/focus */
+  text-decoration: none;
+}
+
 /* ============================================
    BOOTSTRAP CUSTOM OVERRIDE - CUSTOM.CSS
    Educational Website Theme
    ============================================ */
-
 
 /* ============================================
    ROOT VARIABLES - Color Palette Override
@@ -650,7 +717,7 @@ section.section-light {
 }
 
 section.section-dark {
-  background-color: #212529;
+  background-color: #1e1e1e;
   color: #ffffff;
 }
 
@@ -1070,5 +1137,1563 @@ section.section-dark p {
   .bg-image,
   .bg-image-parallax {
     background-attachment: scroll;
+  }
+}
+
+/* ============================================
+   ADDITIONAL BOOTSTRAP OVERRIDES
+   Buttons without white borders & Form variants
+   Add this to your existing custom.css
+   ============================================ */
+
+/* ============================================
+   BUTTONS - NO WHITE BORDER VARIANTS
+   ============================================ */
+
+/* Primary Button - Solid Color (No White Border) */
+.btn.btn-primary-solid {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #ffffff;
+  border-width: 2px;
+  font-family: var(--bs-font-heading);
+}
+
+.btn.btn-primary-solid:hover,
+.btn.btn-primary-solid:focus {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary-dark);
+  color: #ffffff;
+}
+
+.btn.btn-primary-solid:active,
+.btn.btn-primary-solid.active {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary-dark);
+  color: #ffffff;
+}
+
+/* Secondary Button - Solid Color (No White Border) */
+.btn.btn-secondary-solid {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  color: #ffffff;
+  border-width: 2px;
+  font-family: var(--bs-font-heading);
+}
+
+.btn.btn-secondary-solid:hover,
+.btn.btn-secondary-solid:focus {
+  background-color: var(--bs-secondary-dark);
+  border-color: var(--bs-secondary-dark);
+  color: #ffffff;
+}
+
+.btn.btn-secondary-solid:active,
+.btn.btn-secondary-solid.active {
+  background-color: var(--bs-secondary-dark);
+  border-color: var(--bs-secondary-dark);
+  color: #ffffff;
+}
+
+/* Tertiary Button - Solid Color (No White Border) */
+.btn.btn-tertiary-solid {
+  background-color: var(--bs-tertiary);
+  border-color: var(--bs-tertiary);
+  color: #ffffff;
+  font-weight: 600;
+  border-width: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-family: var(--bs-font-heading);
+}
+
+.btn.btn-tertiary-solid:hover,
+.btn.btn-tertiary-solid:focus {
+  background-color: var(--bs-tertiary-dark);
+  border-color: var(--bs-tertiary-dark);
+  color: #ffffff;
+}
+
+.btn.btn-tertiary-solid:active,
+.btn.btn-tertiary-solid.active {
+  background-color: var(--bs-tertiary-dark);
+  border-color: var(--bs-tertiary-dark);
+  color: #ffffff;
+}
+
+/* ============================================
+   FORM VARIANTS - DARK BACKGROUND
+   ============================================ */
+
+/* Form Container with Dark Background */
+.form-dark {
+  background-color: #212529;
+  color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.form-dark .form-label {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.form-dark .form-control,
+.form-dark .form-select {
+  background-color: #343a40;
+  border-color: #495057;
+  color: #ffffff;
+}
+
+.form-dark .form-control:focus,
+.form-dark .form-select:focus {
+  background-color: #495057;
+  border-color: var(--bs-primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 0.25rem rgba(10, 61, 163, 0.25);
+}
+
+.form-dark .form-control::placeholder {
+  color: #adb5bd;
+}
+
+.form-dark .form-text {
+  color: #adb5bd;
+}
+
+/* Dark Form with Primary Submit Button */
+.form-dark-primary .btn[type="submit"],
+.form-dark-primary .btn-submit {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #ffffff;
+  border-width: 2px;
+}
+
+.form-dark-primary .btn[type="submit"]:hover,
+.form-dark-primary .btn-submit:hover {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary-dark);
+}
+
+/* Dark Form with Secondary Submit Button */
+.form-dark-secondary .btn[type="submit"],
+.form-dark-secondary .btn-submit {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  color: #ffffff;
+  border-width: 2px;
+}
+
+.form-dark-secondary .btn[type="submit"]:hover,
+.form-dark-secondary .btn-submit:hover {
+  background-color: var(--bs-secondary-dark);
+  border-color: var(--bs-secondary-dark);
+}
+
+/* Dark Form with Tertiary Submit Button */
+.form-dark-tertiary .btn[type="submit"],
+.form-dark-tertiary .btn-submit {
+  background-color: var(--bs-tertiary);
+  border-color: var(--bs-tertiary);
+  color: #ffffff;
+  font-weight: 600;
+  border-width: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-dark-tertiary .btn[type="submit"]:hover,
+.form-dark-tertiary .btn-submit:hover {
+  background-color: var(--bs-tertiary-dark);
+  border-color: var(--bs-tertiary-dark);
+}
+
+/* ============================================
+   FORM VARIANTS - WHITE/LIGHT BACKGROUND
+   ============================================ */
+
+/* Form Container with White Background */
+.form-white {
+  background-color: #ffffff;
+  color: #212529;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.form-white .form-label {
+  color: #212529;
+  font-weight: 600;
+}
+
+.form-white .form-control,
+.form-white .form-select {
+  background-color: #ffffff;
+  border-color: #ced4da;
+  color: #212529;
+}
+
+.form-white .form-control:focus,
+.form-white .form-select:focus {
+  background-color: #ffffff;
+  border-color: var(--bs-primary);
+  color: #212529;
+  box-shadow: 0 0 0 0.25rem rgba(10, 61, 163, 0.25);
+}
+
+.form-white .form-control::placeholder {
+  color: #6c757d;
+}
+
+.form-white .form-text {
+  color: #6c757d;
+}
+
+/* White Form with Primary Submit Button */
+.form-white-primary .btn[type="submit"],
+.form-white-primary .btn-submit {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #ffffff;
+  border-width: 2px;
+}
+
+.form-white-primary .btn[type="submit"]:hover,
+.form-white-primary .btn-submit:hover {
+  background-color: var(--bs-primary-dark);
+  border-color: var(--bs-primary-dark);
+}
+
+/* White Form with Secondary Submit Button */
+.form-white-secondary .btn[type="submit"],
+.form-white-secondary .btn-submit {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+  color: #ffffff;
+  border-width: 2px;
+}
+
+.form-white-secondary .btn[type="submit"]:hover,
+.form-white-secondary .btn-submit:hover {
+  background-color: var(--bs-secondary-dark);
+  border-color: var(--bs-secondary-dark);
+}
+
+/* White Form with Tertiary Submit Button */
+.form-white-tertiary .btn[type="submit"],
+.form-white-tertiary .btn-submit {
+  background-color: var(--bs-tertiary);
+  border-color: var(--bs-tertiary);
+  color: #ffffff;
+  font-weight: 600;
+  border-width: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-white-tertiary .btn[type="submit"]:hover,
+.form-white-tertiary .btn-submit:hover {
+  background-color: var(--bs-tertiary-dark);
+  border-color: var(--bs-tertiary-dark);
+}
+
+/* ============================================
+   FORM VARIANTS - COMBINED CLASSES
+   ============================================ */
+
+/* Apply dark background styling when using both classes */
+.form-dark.form-dark-primary,
+.form-dark.form-dark-secondary,
+.form-dark.form-dark-tertiary {
+  background-color: #212529;
+  color: #ffffff;
+}
+
+/* Apply white background styling when using both classes */
+.form-white.form-white-primary,
+.form-white.form-white-secondary,
+.form-white.form-white-tertiary {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+/* ============================================
+   CHECKBOX & RADIO BUTTONS FOR DARK FORMS
+   ============================================ */
+
+.form-dark .form-check-input {
+  background-color: #343a40;
+  border-color: #495057;
+}
+
+.form-dark .form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.form-dark .form-check-label {
+  color: #ffffff;
+}
+
+.form-dark-secondary .form-check-input:checked {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+}
+
+.form-dark-tertiary .form-check-input:checked {
+  background-color: var(--bs-tertiary);
+  border-color: var(--bs-tertiary);
+}
+
+/* ============================================
+   CHECKBOX & RADIO BUTTONS FOR WHITE FORMS
+   ============================================ */
+
+.form-white .form-check-input {
+  background-color: #ffffff;
+  border-color: #ced4da;
+}
+
+.form-white .form-check-input:checked {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.form-white .form-check-label {
+  color: #212529;
+}
+
+.form-white-secondary .form-check-input:checked {
+  background-color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
+}
+
+.form-white-tertiary .form-check-input:checked {
+  background-color: var(--bs-tertiary);
+  border-color: var(--bs-tertiary);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .form-dark,
+  .form-white {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-dark,
+  .form-white {
+    padding: 1rem;
+  }
+}
+
+/* ============================================
+   ADDITIONAL BOOTSTRAP OVERRIDES
+   Full-Width Spray Paint Layered Background
+   Add this to your existing custom.css
+   ============================================ */
+
+/* ============================================
+   SPRAY PAINT LAYER - FULL WIDTH CONTAINER
+   ============================================ */
+
+/* Main container for full-width layered backgrounds */
+.spray-fullwidth-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Base full-width spray paint layer */
+.spray-fullwidth {
+  position: absolute;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none; /* Allows clicking through the layer */
+  z-index: 1; /* Behind content */
+  opacity: 0.9;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ============================================
+   TOP POSITIONED VARIANTS
+   ============================================ */
+
+/* Top Left Aligned */
+.spray-fullwidth-top-left {
+  top: 0;
+  background-position: top left;
+  height: 70vh;
+}
+
+/* Top Center Aligned */
+.spray-fullwidth-top-center {
+  top: 0;
+  background-position: top center;
+  height: 70vh;
+}
+
+/* Top Right Aligned */
+.spray-fullwidth-top-right {
+  top: 0;
+  background-position: top right;
+  height: 70vh;
+}
+
+/* Top Full (centered vertically in image) */
+.spray-fullwidth-top {
+  top: 0;
+  background-position: center top;
+  height: 70vh;
+}
+
+/* ============================================
+   BOTTOM POSITIONED VARIANTS
+   ============================================ */
+
+/* Bottom Left Aligned */
+.spray-fullwidth-bottom-left {
+  bottom: 0;
+  background-position: bottom left;
+  height: 70vh;
+}
+
+/* Bottom Center Aligned */
+.spray-fullwidth-bottom-center {
+  bottom: 0;
+  background-position: bottom center;
+  transform: translateX(-50%);
+  height: 70vh;
+}
+
+/* Bottom Right Aligned */
+.spray-fullwidth-bottom-right {
+  bottom: 0;
+  background-position: bottom right;
+  height: 70vh;
+}
+
+/* Bottom Full (centered vertically in image) */
+.spray-fullwidth-bottom {
+  bottom: 0;
+  background-position: center bottom;
+  height: 70vh;
+}
+
+/* ============================================
+   CENTER POSITIONED VARIANTS
+   ============================================ */
+
+/* Center Left Aligned */
+.spray-fullwidth-center-left {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center left;
+  height: 70vh;
+}
+
+/* Center (Both horizontally and vertically) */
+.spray-fullwidth-center {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center center;
+  height: 70vh;
+}
+
+/* Center Right Aligned */
+.spray-fullwidth-center-right {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center right;
+  height: 70vh;
+}
+
+/* ============================================
+   HEIGHT VARIANTS (60-80% viewport)
+   ============================================ */
+
+/* 60% Viewport Height */
+.spray-fullwidth-60 {
+  height: 60vh !important;
+}
+
+/* 65% Viewport Height */
+.spray-fullwidth-65 {
+  height: 65vh !important;
+}
+
+/* 70% Viewport Height (Default) */
+.spray-fullwidth-70 {
+  height: 70vh !important;
+}
+
+/* 75% Viewport Height */
+.spray-fullwidth-75 {
+  height: 75vh !important;
+}
+
+/* 80% Viewport Height */
+.spray-fullwidth-80 {
+  height: 80vh !important;
+}
+
+.spray-fullwidth-100 {
+  height: 100vh !important;
+}
+
+/* ============================================
+   OPACITY VARIANTS
+   ============================================ */
+
+.spray-fullwidth-opacity-10 {
+  opacity: 0.1;
+}
+
+.spray-fullwidth-opacity-20 {
+  opacity: 0.2;
+}
+
+.spray-fullwidth-opacity-30 {
+  opacity: 0.3;
+}
+
+.spray-fullwidth-opacity-40 {
+  opacity: 0.4;
+}
+
+.spray-fullwidth-opacity-50 {
+  opacity: 0.5;
+}
+
+.spray-fullwidth-opacity-60 {
+  opacity: 0.6;
+}
+
+.spray-fullwidth-opacity-70 {
+  opacity: 0.7;
+}
+
+.spray-fullwidth-opacity-80 {
+  opacity: 0.8;
+}
+
+.spray-fullwidth-opacity-90 {
+  opacity: 0.9;
+}
+
+.spray-fullwidth-opacity-100 {
+  opacity: 1;
+}
+
+/* ============================================
+   Z-INDEX LAYERS (For Multiple Spray Layers)
+   ============================================ */
+
+/* Layer 1 - Lowest/Behind */
+.spray-fullwidth-layer-1 {
+  z-index: 1;
+}
+
+/* Layer 2 */
+.spray-fullwidth-layer-2 {
+  z-index: 2;
+}
+
+/* Layer 3 */
+.spray-fullwidth-layer-3 {
+  z-index: 3;
+}
+
+/* Layer 4 - Highest (but still behind content) */
+.spray-fullwidth-layer-4 {
+  z-index: 4;
+}
+
+/* Layer 5 */
+.spray-fullwidth-layer-5 {
+  z-index: 5;
+}
+
+/* ============================================
+   CONTENT LAYER (Ensures content stays on top)
+   ============================================ */
+
+/* Apply to your main content container */
+.spray-fullwidth-content {
+  position: relative;
+  z-index: 100; /* Well above spray layers */
+}
+
+/* Alternative content wrapper */
+.content-above-spray {
+  position: relative;
+  z-index: 100;
+}
+
+/* ============================================
+   BLEND MODE VARIANTS
+   ============================================ */
+
+.spray-fullwidth-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.spray-fullwidth-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.spray-fullwidth-blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.spray-fullwidth-blend-darken {
+  mix-blend-mode: darken;
+}
+
+.spray-fullwidth-blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+.spray-fullwidth-blend-color-dodge {
+  mix-blend-mode: color-dodge;
+}
+
+.spray-fullwidth-blend-soft-light {
+  mix-blend-mode: soft-light;
+}
+
+/* ============================================
+   BACKGROUND SIZE VARIANTS
+   ============================================ */
+
+/* Cover - fills entire area (default) */
+.spray-fullwidth-cover {
+  background-size: cover !important;
+}
+
+/* Contain - shows entire image */
+.spray-fullwidth-contain {
+  background-size: contain !important;
+}
+
+/* Auto - original size */
+.spray-fullwidth-auto {
+  background-size: auto !important;
+}
+
+/* 100% width and height */
+.spray-fullwidth-stretch {
+  background-size: 100% 100% !important;
+}
+
+/* ============================================
+   ANIMATION VARIANTS
+   ============================================ */
+
+/* Fade In */
+@keyframes sprayFullwidthFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+.spray-fullwidth-fade-in {
+  animation: sprayFullwidthFadeIn 1.5s ease-in-out;
+}
+
+/* Fade In Slow */
+.spray-fullwidth-fade-in-slow {
+  animation: sprayFullwidthFadeIn 2.5s ease-in-out;
+}
+
+/* Fade In Fast */
+.spray-fullwidth-fade-in-fast {
+  animation: sprayFullwidthFadeIn 0.8s ease-in-out;
+}
+
+/* Slide In From Top */
+@keyframes spraySlideTop {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 0.9;
+  }
+}
+
+.spray-fullwidth-slide-top {
+  animation: spraySlideTop 1.2s ease-out;
+}
+
+/* Slide In From Bottom */
+@keyframes spraySlideBottom {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 0.9;
+  }
+}
+
+.spray-fullwidth-slide-bottom {
+  animation: spraySlideBottom 1.2s ease-out;
+}
+
+/* ============================================
+   FIXED POSITION VARIANT (Parallax Effect)
+   ============================================ */
+
+.spray-fullwidth-fixed {
+  position: fixed;
+  left: 0;
+  transform: none;
+  width: 100vw;
+}
+
+.spray-fullwidth-fixed.spray-fullwidth-top,
+.spray-fullwidth-fixed.spray-fullwidth-top-left,
+.spray-fullwidth-fixed.spray-fullwidth-top-center,
+.spray-fullwidth-fixed.spray-fullwidth-top-right {
+  top: 0;
+}
+
+.spray-fullwidth-fixed.spray-fullwidth-bottom,
+.spray-fullwidth-fixed.spray-fullwidth-bottom-left,
+.spray-fullwidth-fixed.spray-fullwidth-bottom-center,
+.spray-fullwidth-fixed.spray-fullwidth-bottom-right {
+  bottom: 0;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Tablets and Below (max-width: 992px) */
+@media (max-width: 992px) {
+  .spray-fullwidth {
+    height: 60vh;
+  }
+
+  .spray-fullwidth-top,
+  .spray-fullwidth-top-left,
+  .spray-fullwidth-top-center,
+  .spray-fullwidth-top-right,
+  .spray-fullwidth-bottom,
+  .spray-fullwidth-bottom-left,
+  .spray-fullwidth-bottom-center,
+  .spray-fullwidth-bottom-right,
+  .spray-fullwidth-center,
+  .spray-fullwidth-center-left,
+  .spray-fullwidth-center-right {
+    height: 60vh;
+  }
+
+  /* Height variants scale down */
+  .spray-fullwidth-60 {
+    height: 50vh !important;
+  }
+
+  .spray-fullwidth-65 {
+    height: 55vh !important;
+  }
+
+  .spray-fullwidth-70 {
+    height: 60vh !important;
+  }
+
+  .spray-fullwidth-75 {
+    height: 65vh !important;
+  }
+
+  .spray-fullwidth-80 {
+    height: 70vh !important;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .spray-fullwidth {
+    height: 50vh;
+  }
+
+  .spray-fullwidth-top,
+  .spray-fullwidth-top-left,
+  .spray-fullwidth-top-center,
+  .spray-fullwidth-top-right,
+  .spray-fullwidth-bottom,
+  .spray-fullwidth-bottom-left,
+  .spray-fullwidth-bottom-center,
+  .spray-fullwidth-bottom-right,
+  .spray-fullwidth-center,
+  .spray-fullwidth-center-left,
+  .spray-fullwidth-center-right {
+    height: 50vh;
+  }
+
+  /* Height variants scale down more */
+  .spray-fullwidth-60 {
+    height: 40vh !important;
+  }
+
+  .spray-fullwidth-65 {
+    height: 45vh !important;
+  }
+
+  .spray-fullwidth-70 {
+    height: 50vh !important;
+  }
+
+  .spray-fullwidth-75 {
+    height: 55vh !important;
+  }
+
+  .spray-fullwidth-80 {
+    height: 60vh !important;
+  }
+
+  /* Disable fixed positioning on mobile for better performance */
+  .spray-fullwidth-fixed {
+    position: absolute;
+  }
+}
+
+/* Small Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+  .spray-fullwidth {
+    height: 40vh;
+  }
+
+  .spray-fullwidth-top,
+  .spray-fullwidth-top-left,
+  .spray-fullwidth-top-center,
+  .spray-fullwidth-top-right,
+  .spray-fullwidth-bottom,
+  .spray-fullwidth-bottom-left,
+  .spray-fullwidth-bottom-center,
+  .spray-fullwidth-bottom-right,
+  .spray-fullwidth-center,
+  .spray-fullwidth-center-left,
+  .spray-fullwidth-center-right {
+    height: 40vh;
+  }
+
+  /* Height variants scale down further */
+  .spray-fullwidth-60 {
+    height: 35vh !important;
+  }
+
+  .spray-fullwidth-65 {
+    height: 38vh !important;
+  }
+
+  .spray-fullwidth-70 {
+    height: 40vh !important;
+  }
+
+  .spray-fullwidth-75 {
+    height: 45vh !important;
+  }
+
+  .spray-fullwidth-80 {
+    height: 50vh !important;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Hide spray layer on mobile if needed */
+.spray-fullwidth-hide-mobile {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .spray-fullwidth-hide-mobile {
+    display: none;
+  }
+}
+
+/* Show only on mobile */
+.spray-fullwidth-mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .spray-fullwidth-mobile-only {
+    display: block;
+  }
+}
+
+/* Ensure all interactive elements stay above spray */
+.spray-fullwidth-container .btn,
+.spray-fullwidth-container .card,
+.spray-fullwidth-container .form-control,
+.spray-fullwidth-container .navbar,
+.spray-fullwidth-container a,
+.spray-fullwidth-container input,
+.spray-fullwidth-container select,
+.spray-fullwidth-container textarea {
+  position: relative;
+  z-index: 100;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .spray-fullwidth {
+    display: none;
+  }
+
+  .spray-fullwidth-container {
+    overflow: visible;
+  }
+}
+
+/*
+/* ============================================
+   ADDITIONAL BOOTSTRAP OVERRIDES
+   Spray Paint Layered Background
+   Add this to your existing custom.css
+   ============================================ */
+
+/* ============================================
+   SPRAY PAINT LAYER - BASE CONTAINER
+   ============================================ */
+
+/* Main container for layered backgrounds */
+.spray-layer-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Base spray paint layer */
+.spray-layer {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none; /* Allows clicking through the layer */
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - TOP POSITIONED
+   ============================================ */
+
+/* Top Left Corner */
+.spray-layer-top-left {
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 40vh;
+  background-position: top left;
+}
+
+/* Top Right Corner */
+.spray-layer-top-right {
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 40vh;
+  background-position: top right;
+}
+
+/* Top Center */
+.spray-layer-top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 35vh;
+  background-position: top center;
+}
+
+/* Top Full Width */
+.spray-layer-top-full {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background-position: top center;
+  background-size: cover;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - BOTTOM POSITIONED
+   ============================================ */
+
+/* Bottom Left Corner */
+.spray-layer-bottom-left {
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 40vh;
+  background-position: bottom left;
+}
+
+/* Bottom Right Corner */
+.spray-layer-bottom-right {
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 40vh;
+  background-position: bottom right;
+}
+
+/* Bottom Center */
+.spray-layer-bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 60vh;
+  background-position: bottom center;
+}
+
+/* Bottom Full Width */
+.spray-layer-bottom-full {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background-position: bottom center;
+  background-size: cover;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - LEFT SIDE POSITIONED
+   ============================================ */
+
+/* Left Top */
+.spray-layer-left-top {
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 40%;
+  background-position: left top;
+}
+
+/* Left Center */
+.spray-layer-left-center {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 30vw;
+  height: 50%;
+  background-position: left center;
+}
+
+/* Left Bottom */
+.spray-layer-left-bottom {
+  bottom: 0;
+  left: 0;
+  width: 30vw;
+  height: 40%;
+  background-position: left bottom;
+}
+
+/* Left Full Height */
+.spray-layer-left-full {
+  top: 0;
+  left: 0;
+  width: 25vw;
+  height: 100%;
+  background-position: left center;
+  background-size: cover;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - RIGHT SIDE POSITIONED
+   ============================================ */
+
+/* Right Top */
+.spray-layer-right-top {
+  top: 0;
+  right: 0;
+  width: 30vw;
+  height: 40%;
+  background-position: right top;
+}
+
+/* Right Center */
+.spray-layer-right-center {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 30vw;
+  height: 50%;
+  background-position: right center;
+}
+
+/* Right Bottom */
+.spray-layer-right-bottom {
+  bottom: 0;
+  right: 0;
+  width: 30vw;
+  height: 40%;
+  background-position: right bottom;
+}
+
+/* Right Full Height */
+.spray-layer-right-full {
+  top: 0;
+  right: 0;
+  width: 25vw;
+  height: 100%;
+  background-position: right center;
+  background-size: cover;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - SIZE VARIANTS
+   ============================================ */
+
+/* Small size (25% smaller) */
+.spray-layer-sm {
+  width: 30% !important;
+  height: 30vh !important;
+}
+
+.spray-layer-left-sm,
+.spray-layer-right-sm {
+  width: 20vw !important;
+  height: 35% !important;
+}
+
+/* Medium size (default - no modifier needed) */
+
+/* Large size (25% larger) */
+.spray-layer-lg {
+  width: 50% !important;
+  height: 50vh !important;
+}
+
+.spray-layer-left-lg,
+.spray-layer-right-lg {
+  width: 35vw !important;
+  height: 60% !important;
+}
+
+/* Extra Large size (50% larger) */
+.spray-layer-xl {
+  width: 60% !important;
+  height: 60vh !important;
+}
+
+.spray-layer-xxl {
+  width: 500% !important;
+  height: 80vh !important;
+}
+
+.spray-layer-left-xl,
+.spray-layer-right-xl {
+  width: 40vw !important;
+  height: 70% !important;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - OPACITY VARIANTS
+   ============================================ */
+
+.spray-layer-opacity-light {
+  opacity: 0.5;
+}
+
+.spray-layer-opacity-medium {
+  opacity: 0.7;
+}
+
+.spray-layer-opacity-heavy {
+  opacity: 1;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - BLEND MODES
+   ============================================ */
+
+.spray-layer-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.spray-layer-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.spray-layer-blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.spray-layer-blend-darken {
+  mix-blend-mode: darken;
+}
+
+.spray-layer-blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+/* ============================================
+   SPRAY PAINT LAYER - MULTIPLE LAYERS
+   ============================================ */
+
+/* First layer (lowest) */
+.spray-layer-1 {
+  z-index: 10;
+}
+
+/* Second layer */
+.spray-layer-2 {
+  z-index: 11;
+}
+
+/* Third layer */
+.spray-layer-3 {
+  z-index: 12;
+}
+
+/* Fourth layer (highest) */
+.spray-layer-4 {
+  z-index: 13;
+}
+
+/* Content layer - ensure content appears above spray layers */
+.spray-content {
+  position: relative;
+  z-index: 20;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 992px) {
+  .spray-layer-top-left,
+  .spray-layer-top-right,
+  .spray-layer-bottom-left,
+  .spray-layer-bottom-right {
+    width: 45%;
+    height: 35vh;
+  }
+
+  .spray-layer-top-center,
+  .spray-layer-bottom-center {
+    width: 60%;
+    height: 30vh;
+  }
+
+  .spray-layer-left-center,
+  .spray-layer-right-center,
+  .spray-layer-left-top,
+  .spray-layer-right-top,
+  .spray-layer-left-bottom,
+  .spray-layer-right-bottom {
+    width: 35vw;
+    height: 45%;
+  }
+
+  .spray-layer-left-full,
+  .spray-layer-right-full {
+    width: 30vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .spray-layer-top-left,
+  .spray-layer-top-right,
+  .spray-layer-bottom-left,
+  .spray-layer-bottom-right {
+    width: 50%;
+    height: 25vh;
+  }
+
+  .spray-layer-top-center,
+  .spray-layer-bottom-center {
+    width: 70%;
+    height: 25vh;
+  }
+
+  .spray-layer-top-full,
+  .spray-layer-bottom-full {
+    height: 20vh;
+  }
+
+  .spray-layer-left-center,
+  .spray-layer-right-center,
+  .spray-layer-left-top,
+  .spray-layer-right-top,
+  .spray-layer-left-bottom,
+  .spray-layer-right-bottom {
+    width: 40vw;
+    height: 40%;
+  }
+
+  .spray-layer-left-full,
+  .spray-layer-right-full {
+    width: 35vw;
+  }
+
+  /* Reduce size variants on mobile */
+  .spray-layer-lg {
+    width: 60% !important;
+    height: 35vh !important;
+  }
+
+  .spray-layer-xl {
+    width: 70% !important;
+    height: 40vh !important;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .spray-layer-top-left,
+  .spray-layer-top-right,
+  .spray-layer-bottom-left,
+  .spray-layer-bottom-right {
+    width: 55%;
+    height: 20vh;
+  }
+
+  .spray-layer-top-center,
+  .spray-layer-bottom-center {
+    width: 80%;
+    height: 20vh;
+  }
+
+  .spray-layer-top-full,
+  .spray-layer-bottom-full {
+    height: 15vh;
+  }
+
+  .spray-layer-left-center,
+  .spray-layer-right-center,
+  .spray-layer-left-top,
+  .spray-layer-right-top,
+  .spray-layer-left-bottom,
+  .spray-layer-right-bottom {
+    width: 45vw;
+    height: 35%;
+  }
+
+  .spray-layer-left-full,
+  .spray-layer-right-full {
+    width: 40vw;
+  }
+}
+
+/* ============================================
+   ANIMATION VARIANTS (OPTIONAL)
+   ============================================ */
+
+/* Fade in animation */
+@keyframes sprayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+.spray-layer-animated {
+  animation: sprayFadeIn 1s ease-in-out;
+}
+
+/* Slide in from position */
+@keyframes spraySlideInTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes spraySlideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes spraySlideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes spraySlideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 0.9;
+  }
+}
+
+.spray-layer-slide-top {
+  animation: spraySlideInTop 1s ease-out;
+}
+
+.spray-layer-slide-bottom {
+  animation: spraySlideInBottom 1s ease-out;
+}
+
+.spray-layer-slide-left {
+  animation: spraySlideInLeft 1s ease-out;
+}
+
+.spray-layer-slide-right {
+  animation: spraySlideInRight 1s ease-out;
+}
+
+/* Accordion Dark Solid */
+.accordion.accordion-dark-solid {
+  border: 2px solid #ffffff; /* outer border for accordion */
+  border-radius: 0.5rem; /* optional, rounded corners */
+  overflow: hidden;
+}
+
+/* Accordion header (button) */
+.accordion.accordion-dark-solid .accordion-button {
+  background-color: #212529; /* dark background */
+  color: #ffffff; /* white text */
+  border: 2px solid #ffffff; /* white border */
+  font-family: var(--bs-font-heading);
+  font-weight: 600;
+  transition: background-color 0.3s, border-color 0.3s;
+  border-radius: 0; /* no extra rounding inside header */
+}
+
+/* Collapsed state (optional hover/darker) */
+.accordion.accordion-dark-solid .accordion-button.collapsed {
+  background-color: #343a40; /* slightly lighter dark */
+  color: #ffffff;
+}
+
+/* Accordion body */
+.accordion.accordion-dark-solid .accordion-body {
+  background-color: #212529; /* same as header for solid effect */
+  color: #ffffff;
+  border-top: 2px solid #ffffff; /* separates header from body */
+  padding: 1rem;
+}
+
+/* ============================================================
+   SPRAY PAINT RESPONSIVE OVERLAY (Bootstrap 5 Override)
+   ============================================================ */
+
+/* Base spray layer */
+.spray-overlay {
+  position: absolute;
+  width: 100vw; /* Always fill full viewport width */
+  left: 50%;
+  transform: translateX(-50%); /* Center the 100vw element inside a container */
+  height: 70vh; /* Default height */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 10; /* Above main background, below content */
+  pointer-events: none; /* Avoid blocking links/buttons */
+  overflow: hidden;
+}
+
+/* Height variants */
+.spray-h-60 {
+  height: 60vh;
+}
+.spray-h-70 {
+  height: 70vh;
+}
+.spray-h-80 {
+  height: 80vh;
+}
+
+/* ============================================================
+   POSITION VARIANTS
+   ============================================================ */
+
+/* TOP positions */
+.spray-top-center {
+  top: 0;
+  background-position: top center;
+}
+
+.spray-top-left {
+  top: 0;
+  background-position: top left;
+}
+
+.spray-top-right {
+  top: 0;
+  background-position: top right;
+}
+
+/* BOTTOM positions */
+.spray-bottom-center {
+  bottom: 0;
+  background-position: bottom center;
+}
+
+.spray-bottom-left {
+  bottom: 0;
+  background-position: bottom left;
+}
+
+.spray-bottom-right {
+  bottom: 0;
+  background-position: bottom right;
+}
+
+/* LEFT SIDE vertical spray */
+.spray-left-center {
+  top: 0;
+  left: 0;
+  transform: none; /* Cancel 50% centering for this variant */
+  width: 45vw; /* Vertical spray size */
+  height: 100%;
+  background-size: contain; /* Prevent stretching */
+  background-position: left center;
+}
+
+/* ============================================================
+   RESPONSIVE TWEAKS
+   ============================================================ */
+@media (max-width: 768px) {
+  .spray-overlay {
+    height: 50vh; /* Reduce height on small screens */
   }
 }

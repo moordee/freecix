@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spray Paint Layer Demo - Educational Website</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+        /* Basic Custom CSS (simplified version) */
+        :root {
+            --bs-primary: #0A3DA3;
+            --bs-secondary: #A30A45;
+            --bs-tertiary: #66E3CA;
+            --bs-font-heading: 'Ubuntu', sans-serif;
+            --bs-font-body: 'Open Sans', sans-serif;
+        }
+        
+        body {
+            font-family: var(--bs-font-body);
+        }
+        
+        h1, h2, h3, h4, h5, h6, .btn {
+            font-family: var(--bs-font-heading);
+        }
+        
+        /* Background Image Base */
+        .bg-image {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+        }
+        
+        /* Spray Layer Container */
+        .spray-layer-container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        /* Base Spray Layer */
+        .spray-layer {
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.9;
+        }
+        
+        /* Positioning Classes */
+        .spray-layer-top-right {
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 40vh;
+            background-position: top right;
+        }
+        
+        .spray-layer-bottom-left {
+            bottom: 0;
+            left: 0;
+            width: 40%;
+            height: 40vh;
+            background-position: bottom left;
+        }
+        
+        .spray-layer-left-center {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 30vw;
+            height: 50%;
+            background-position: left center;
+        }
+        
+        .spray-layer-top-full {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30vh;
+            background-position: top center;
+            background-size: cover;
+        }
+        
+        /* Size Variants */
+        .spray-layer-lg {
+            width: 50% !important;
+            height: 50vh !important;
+        }
+        
+        .spray-layer-sm {
+            width: 30% !important;
+            height: 30vh !important;
+        }
+        
+        /* Opacity Variants */
+        .spray-layer-opacity-light {
+            opacity: 0.5;
+        }
+        
+        .spray-layer-opacity-medium {
+            opacity: 0.7;
+        }
+        
+        /* Layer Stacking */
+        .spray-layer-1 {
+            z-index: 10;
+        }
+        
+        .spray-layer-2 {
+            z-index: 11;
+        }
+        
+        .spray-layer-3 {
+            z-index: 12;
+        }
+        
+        /* Content Layer */
+        .spray-content {
+            position: relative;
+            z-index: 20;
+        }
+        
+        /* Animation */
+        @keyframes sprayFadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.9; }
+        }
+        
+        .spray-layer-animated {
+            animation: sprayFadeIn 1.5s ease-in-out;
+        }
+        
+        /* Button Styles */
+        .btn-primary-solid {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            color: #ffffff;
+            border-width: 2px;
+        }
+        
+        .btn-primary-solid:hover {
+            background-color: #072d7a;
+            border-color: #072d7a;
+            color: #ffffff;
+        }
+        
+        .btn-tertiary-solid {
+            background-color: var(--bs-tertiary);
+            border-color: var(--bs-tertiary);
+            color: #ffffff;
+            font-weight: 600;
+            border-width: 2px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-tertiary-solid:hover {
+            background-color: #4dd1b8;
+            border-color: #4dd1b8;
+            color: #ffffff;
+        }
+        
+        /* Section Styles */
+        section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 0;
+        }
+        
+        .section-primary {
+            background-color: var(--bs-primary);
+            color: #ffffff;
+        }
+        
+        .section-light {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        
+        /* Create spray paint effect with CSS gradients */
+        .spray-effect-1 {
+            background: radial-gradient(ellipse at top right, 
+                rgba(10, 61, 163, 0.8) 0%, 
+                rgba(10, 61, 163, 0.6) 30%, 
+                rgba(10, 61, 163, 0.3) 60%, 
+                transparent 100%);
+        }
+        
+        .spray-effect-2 {
+            background: radial-gradient(ellipse at bottom left, 
+                rgba(163, 10, 69, 0.8) 0%, 
+                rgba(163, 10, 69, 0.6) 30%, 
+                rgba(163, 10, 69, 0.3) 60%, 
+                transparent 100%);
+        }
+        
+        .spray-effect-3 {
+            background: radial-gradient(ellipse at left center, 
+                rgba(102, 227, 202, 0.8) 0%, 
+                rgba(102, 227, 202, 0.6) 30%, 
+                rgba(102, 227, 202, 0.3) 60%, 
+                transparent 100%);
+        }
+        
+        .spray-effect-4 {
+            background: linear-gradient(to bottom, 
+                rgba(10, 61, 163, 0.7) 0%, 
+                rgba(10, 61, 163, 0.4) 50%, 
+                transparent 100%);
+        }
+        
+        /* Gradient Background for Demo */
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        /* Card Styles */
+        .demo-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .spray-layer-top-right,
+            .spray-layer-bottom-left {
+                width: 50%;
+                height: 25vh;
+            }
+            
+            .spray-layer-left-center {
+                width: 40vw;
+                height: 40%;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="spray-fullwidth-container">
+  
+  <!-- Layer 1: Bottom left, 75% height -->
+  <div class="spray-fullwidth spray-fullwidth-layer-1 
+              spray-fullwidth-bottom-left spray-fullwidth-75" 
+       style="background-image: url('spray-red.png');"></div>
+  
+  <!-- Layer 2: Top right, 60% height, 50% opacity -->
+  <div class="spray-fullwidth spray-fullwidth-layer-2 
+              spray-fullwidth-top-right spray-fullwidth-60 
+              spray-fullwidth-opacity-50" 
+       style="background-image: url('spray-blue.png');"></div>
+  
+  <!-- Content -->
+  <div class="container spray-fullwidth-content">
+    <h1>Layered Spray Effect!</h1>
+  </div>
+  
+</section>
+
+    <!-- EXAMPLE 1: Hero Section with Top-Right and Bottom-Left Spray -->
+    <section class="bg-image spray-layer-container gradient-bg-1">
+        
+        <!-- Top Right Spray Layer (Primary Color) -->
+        <div class="spray-layer spray-layer-1 spray-layer-top-right spray-layer-lg spray-effect-1 spray-layer-animated"></div>
+        
+        <!-- Bottom Left Spray Layer (Secondary Color) -->
+        <div class="spray-layer spray-layer-2 spray-layer-bottom-left spray-effect-2 spray-layer-animated"></div>
+        
+        <!-- Content -->
+        <div class="container spray-content">
+            <div class="row align-items-center" style="min-height: 100vh;">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-1 text-white mb-4">Welcome to Learning</h1>
+                    <p class="lead text-white mb-5">Experience education with artistic flair. Notice the spray paint effects layered on top of the background.</p>
+                    <button class="btn btn-primary-solid btn-lg me-3">Get Started</button>
+                    <button class="btn btn-tertiary-solid btn-lg">Learn More</button>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="spray-fullwidth-container section-primary">
+  
+  <!-- Spray layer at bottom center, 70% height -->
+  <div class="spray-fullwidth spray-fullwidth-bottom-center spray-fullwidth-70" 
+       style="background-image: url('spray.png');"></div>
+  
+  <!-- Content (stays on top) -->
+  <div class="container spray-fullwidth-content">
+    <h1>Your Content Here</h1>
+    <button class="btn btn-primary">Click Me</button>
+  </div>
+  
+</section>
+
+    <!-- EXAMPLE 2: Content Section with Left Side Spray -->
+    <section class="section-light spray-layer-container">
+        
+        <!-- Left Center Spray Layer (Tertiary Color) -->
+        <div class="spray-layer spray-layer-1 spray-layer-left-center spray-effect-3"></div>
+        
+        <!-- Content -->
+        <div class="container spray-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="demo-card">
+                        <h2 class="display-4 mb-4" style="color: var(--bs-primary);">Multiple Layer Example</h2>
+                        <p class="lead mb-4">This section demonstrates a spray paint layer on the left side. The layer is positioned using <code>spray-layer-left-center</code> class.</p>
+                        <ul class="mb-4">
+                            <li>Layer stays in place while you scroll</li>
+                            <li>Content remains clickable and interactive</li>
+                            <li>Fully responsive on mobile devices</li>
+                            <li>Uses CSS radial gradients for spray effect</li>
+                        </ul>
+                        <button class="btn btn-primary-solid">Explore Features</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- EXAMPLE 3: Triple Layer Example -->
+    <section class="bg-image spray-layer-container gradient-bg-2">
+        
+        <!-- Layer 1: Top Right (Small, Light Opacity) -->
+        <div class="spray-layer spray-layer-1 spray-layer-top-right spray-layer-sm spray-layer-opacity-light spray-effect-1"></div>
+        
+        <!-- Layer 2: Bottom Left (Large) -->
+        <div class="spray-layer spray-layer-2 spray-layer-bottom-left spray-layer-lg spray-effect-2"></div>
+        
+        <!-- Layer 3: Left Center (Medium Opacity) -->
+        <div class="spray-layer spray-layer-3 spray-layer-left-center spray-layer-opacity-medium spray-effect-3"></div>
+        
+        <!-- Content -->
+        <div class="container spray-content">
+            <div class="row align-items-center" style="min-height: 100vh;">
+                <div class="col-lg-6">
+                    <h2 class="display-3 text-white mb-4">Triple Layer Magic</h2>
+                    <p class="lead text-white mb-4">This section showcases THREE spray paint layers stacked together:</p>
+                    <div class="demo-card mb-4">
+                        <h5 style="color: var(--bs-primary);">Layer 1 (Top Right)</h5>
+                        <p class="mb-0">Small size with light opacity - creates subtle accent</p>
+                    </div>
+                    <div class="demo-card mb-4">
+                        <h5 style="color: var(--bs-secondary);">Layer 2 (Bottom Left)</h5>
+                        <p class="mb-0">Large size with normal opacity - bold statement</p>
+                    </div>
+                    <div class="demo-card mb-4">
+                        <h5 style="color: var(--bs-tertiary);">Layer 3 (Left Center)</h5>
+                        <p class="mb-0">Medium opacity - adds depth and dimension</p>
+                    </div>
+                    <button class="btn btn-tertiary-solid btn-lg">See More Examples</button>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- EXAMPLE 4: Full Width Top Spray -->
+    <section class="section-primary spray-layer-container">
+        
+        <!-- Top Full Width Spray -->
+        <div class="spray-layer spray-layer-1 spray-layer-top-full spray-effect-4"></div>
+        
+        <!-- Content -->
+        <div class="container spray-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-4 text-white mb-4">Full Width Spray</h2>
+                    <p class="lead text-white mb-5">This demonstrates a full-width spray paint effect at the top of the section using <code>spray-layer-top-full</code> class. Perfect for headers and banners!</p>
+                    
+                    <div class="row g-4 mt-5">
+                        <div class="col-md-4">
+                            <div class="demo-card text-center">
+                                <h3 style="color: var(--bs-primary);">Positioning</h3>
+                                <p>Top, Bottom, Left, Right - Complete control over placement</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="demo-card text-center">
+                                <h3 style="color: var(--bs-secondary);">Sizing</h3>
+                                <p>Small, Medium, Large, XL - Responsive to viewport</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="demo-card text-center">
+                                <h3 style="color: var(--bs-tertiary);">Opacity</h3>
+                                <p>Light, Medium, Heavy - Adjust visibility easily</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- EXAMPLE 5: Complex Multi-Layer Composition -->
+    <section class="bg-image spray-layer-container gradient-bg-3">
+        
+        <!-- Multiple overlapping layers for artistic effect -->
+        <div class="spray-layer spray-layer-1 spray-layer-top-right spray-layer-lg spray-effect-1 spray-layer-opacity-medium"></div>
+        <div class="spray-layer spray-layer-2 spray-layer-bottom-left spray-layer-lg spray-effect-2 spray-layer-opacity-medium"></div>
+        <div class="spray-layer spray-layer-3 spray-layer-left-center spray-effect-3 spray-layer-opacity-light"></div>
+        
+        <!-- Content -->
+        <div class="container spray-content">
+            <div class="row align-items-center" style="min-height: 100vh;">
+                <div class="col-lg-10 mx-auto">
+                    <div class="demo-card text-center p-5">
+                        <h2 class="display-3 mb-4" style="color: var(--bs-primary);">How to Implement</h2>
+                        <p class="lead mb-5">Here's the HTML structure used in these examples:</p>
+                        
+                        <div class="text-start bg-light p-4 rounded" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                            <pre style="margin: 0; white-space: pre-wrap;">
+&lt;section class="spray-layer-container"&gt;
+  
+  &lt;!-- Spray Layer 1 --&gt;
+  &lt;div class="spray-layer spray-layer-1 
+              spray-layer-top-right 
+              spray-layer-lg"&gt;&lt;/div&gt;
+  
+  &lt;!-- Spray Layer 2 --&gt;
+  &lt;div class="spray-layer spray-layer-2 
+              spray-layer-bottom-left"&gt;&lt;/div&gt;
+  
+  &lt;!-- Your Content --&gt;
+  &lt;div class="container spray-content"&gt;
+    &lt;h1&gt;Your Content Here&lt;/h1&gt;
+  &lt;/div&gt;
+  
+&lt;/section&gt;</pre>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h4 style="color: var(--bs-secondary);">Key Classes:</h4>
+                            <div class="row mt-4 g-3">
+                                <div class="col-md-6">
+                                    <div class="alert alert-info text-start">
+                                        <strong>Container:</strong> <code>spray-layer-container</code>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="alert alert-info text-start">
+                                        <strong>Layer:</strong> <code>spray-layer</code>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="alert alert-info text-start">
+                                        <strong>Content:</strong> <code>spray-content</code>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="alert alert-info text-start">
+                                        <strong>Position:</strong> <code>spray-layer-[position]</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary-solid btn-lg mt-4">Start Building</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

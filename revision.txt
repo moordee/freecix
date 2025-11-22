@@ -1,0 +1,31 @@
+Here are some things that needs improvement:
+1. Move the controls BESIDE the avatar
+2. Hair doesn't render properly
+3. Put outline between elements to distinguish them from other facial elements
+4. Clothes render very badly
+5. You have to render the body from head to upper chest, not just the head
+6. All the head coverings don't render properly
+7. Most of the beards and moustaches are misplaced and rendered badly
+8. The hairstyle and length are completely off. Feel free to scribble lines to make them more realistic.
+9. make the eye shapes variant more realistic
+10. The animal masks are badly fitted to the face and lack some important details. Feel free to scribble over them to add more details
+11. Missing features: nose shapes, mouth shapes, ears shape
+12. The ears are rendered so poorly
+13. Face moles sizes are way to big
+
+Feel free to scribble all over each elements to dd more details and make them look more realistic. I've attached a file full of pictures of facial features so you can model the improved versions after them.
+
+Just tell me where I need to put all of the new codes since I already have them in my laptop.
+
+
+hair:
+short, long, curly, bald, medium (done)
+head covering: hijab, turban, bandana (done)
+face mask: surgical mask, face mask, N95 mask (done)
+animal mask: cat, dog, bunny, fox, panda
+glasses: regular, sunglasses, round(done)
+beard style: goatee, stubble, chinstrap, full beard
+moustache: regular, handlebar, pencil, tootbrush, chevron
+eyeliner style: light, medium, heavy, winged
+clothing: t-shirt, hoodie, formal, semi-casual, techwear, batik, muslim wear
+

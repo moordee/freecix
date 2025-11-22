@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Avatar Maker - No Login Required</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Free Avatar Maker</h1>
+        <p>Create your custom avatar - No login required!</p>
+      </header>
+
+      <div class="main-content">
+        <!-- Style Selection -->
+        <div class="style-selector">
+          <button class="style-btn active" data-style="realistic">
+            Realistic
+          </button>
+          <button class="style-btn" data-style="polygonal">Polygonal</button>
+          <button class="style-btn" data-style="anime">Anime</button>
+          <button class="style-btn" data-style="comic">Comic</button>
+        </div>
+
+        <!-- Avatar Display -->
+        <div class="avatar-container">
+          <svg
+            id="avatar-svg"
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Background -->
+            <rect id="background" width="400" height="400" fill="#e0e0e0" />
+
+            <!-- Body/Clothing -->
+            <g id="clothing-group">
+              <path
+                id="clothing"
+                d="M100,350 Q100,300 120,280 L140,350 Z M280,350 L300,280 Q320,300 320,350 Z M140,350 L280,350 L280,400 L140,400 Z"
+                fill="#3498db"
+              />
+            </g>
+
+            <!-- Head -->
+            <ellipse
+              id="head"
+              cx="200"
+              cy="200"
+              rx="80"
+              ry="100"
+              fill="#f4c2a6"
+            />
+
+            <!-- Hair Back -->
+            <g id="hair-back-group">
+              <ellipse
+                id="hair-back"
+                cx="200"
+                cy="160"
+                rx="85"
+                ry="60"
+                fill="#4a3728"
+              />
+            </g>
+
+            <!-- Ears -->
+            <ellipse
+              id="ear-left"
+              cx="130"
+              cy="200"
+              rx="15"
+              ry="20"
+              fill="#f4c2a6"
+            />
+            <ellipse
+              id="ear-right"
+              cx="270"
+              cy="200"
+              rx="15"
+              ry="20"
+              fill="#f4c2a6"
+            />
+
+            <!-- Facial Hair -->
+            <g id="beard-group" style="display: none">
+              <path id="beard" d="" fill="#4a3728" />
+            </g>
+
+            <g id="moustache-group" style="display: none">
+              <path id="moustache" d="" fill="#4a3728" />
+            </g>
+
+            <!-- Mole -->
+            <g id="mole-group" style="display: none">
+              <circle id="mole" cx="200" cy="240" r="4" fill="#3d2817" />
+            </g>
+
+            <!-- Bindi -->
+            <g id="bindi-group" style="display: none">
+              <circle id="bindi" cx="200" cy="170" r="5" fill="#dc143c" />
+            </g>
+
+            <!-- Kohl/Eyeliner -->
+            <g id="kohl-group" style="display: none">
+              <path
+                id="kohl-left"
+                d=""
+                stroke="#000"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                id="kohl-right"
+                d=""
+                stroke="#000"
+                stroke-width="2"
+                fill="none"
+              />
+            </g>
+
+            <!-- Eyes -->
+            <g id="eyes-group">
+              <ellipse
+                id="eye-left-white"
+                cx="170"
+                cy="190"
+                rx="20"
+                ry="25"
+                fill="white"
+              />
+              <ellipse
+                id="eye-left"
+                cx="170"
+                cy="195"
+                rx="12"
+                ry="15"
+                fill="#654321"
+              />
+              <ellipse
+                id="eye-left-pupil"
+                cx="172"
+                cy="195"
+                rx="6"
+                ry="8"
+                fill="black"
+              />
+
+              <ellipse
+                id="eye-right-white"
+                cx="230"
+                cy="190"
+                rx="20"
+                ry="25"
+                fill="white"
+              />
+              <ellipse
+                id="eye-right"
+                cx="230"
+                cy="195"
+                rx="12"
+                ry="15"
+                fill="#654321"
+              />
+              <ellipse
+                id="eye-right-pupil"
+                cx="232"
+                cy="195"
+                rx="6"
+                ry="8"
+                fill="black"
+              />
+            </g>
+
+            <!-- Eyebrows -->
+            <g id="eyebrows-group">
+              <path
+                id="eyebrow-left"
+                d="M150,170 Q170,165 185,170"
+                stroke="#3d2817"
+                stroke-width="3"
+                fill="none"
+              />
+              <path
+                id="eyebrow-right"
+                d="M215,170 Q230,165 250,170"
+                stroke="#3d2817"
+                stroke-width="3"
+                fill="none"
+              />
+            </g>
+
+            <!-- Nose -->
+            <path id="nose" d="M200,210 L195,230 L205,230 Z" fill="#e0a080" />
+
+            <!-- Mouth -->
+            <g id="mouth-group">
+              <path
+                id="mouth"
+                d="M180,250 Q200,260 220,250"
+                stroke="#d4756b"
+                stroke-width="3"
+                fill="none"
+              />
+            </g>
+
+            <!-- Hair Front -->
+            <g id="hair-front-group">
+              <path
+                id="hair-front"
+                d="M120,140 Q115,120 130,110 Q150,100 170,105 Q190,95 210,105 Q230,100 250,110 Q265,120 260,140"
+                fill="#4a3728"
+              />
+            </g>
+
+            <!-- Glasses (hidden by default) -->
+            <g id="glasses-group" style="display: none">
+              <rect
+                x="150"
+                y="180"
+                width="40"
+                height="35"
+                fill="none"
+                stroke="#333"
+                stroke-width="3"
+                rx="5"
+              />
+              <rect
+                x="210"
+                y="180"
+                width="40"
+                height="35"
+                fill="none"
+                stroke="#333"
+                stroke-width="3"
+                rx="5"
+              />
+              <line
+                x1="190"
+                y1="197"
+                x2="210"
+                y2="197"
+                stroke="#333"
+                stroke-width="3"
+              />
+            </g>
+
+            <!-- Head Coverings -->
+            <g id="headcovering-group" style="display: none">
+              <path
+                id="headcovering"
+                d="M115,120 Q115,80 200,80 Q285,80 285,120 L285,180 Q285,200 270,210 Q200,150 130,210 Q115,200 115,180 Z"
+                fill="#8b4789"
+              />
+            </g>
+
+            <!-- Face Mask -->
+            <g id="facemask-group" style="display: none">
+              <path
+                id="facemask"
+                d="M140,210 L260,210 L260,260 Q250,270 200,270 Q150,270 140,260 Z"
+                fill="#ffffff"
+                stroke="#ccc"
+                stroke-width="2"
+              />
+              <line
+                x1="140"
+                y1="210"
+                x2="120"
+                y2="200"
+                stroke="#ccc"
+                stroke-width="2"
+              />
+              <line
+                x1="260"
+                y1="210"
+                x2="280"
+                y2="200"
+                stroke="#ccc"
+                stroke-width="2"
+              />
+            </g>
+
+            <!-- Animal Mask -->
+            <g id="animalmask-group" style="display: none">
+              <ellipse
+                id="animal-mask"
+                cx="200"
+                cy="200"
+                rx="90"
+                ry="85"
+                fill="#ffa500"
+              />
+              <ellipse cx="170" cy="190" rx="25" ry="30" fill="white" />
+              <ellipse cx="230" cy="190" rx="25" ry="30" fill="white" />
+              <ellipse cx="170" cy="195" rx="12" ry="15" fill="black" />
+              <ellipse cx="230" cy="195" rx="12" ry="15" fill="black" />
+              <ellipse cx="200" cy="220" rx="15" ry="12" fill="#333" />
+              <path
+                d="M200,232 L190,245 M200,232 L210,245"
+                stroke="#333"
+                stroke-width="2"
+              />
+              <path
+                d="M185,250 Q200,258 215,250"
+                stroke="#333"
+                stroke-width="2"
+                fill="none"
+              />
+              <path d="M110,150 L130,160 L125,180 Z" fill="#ffa500" />
+              <path d="M290,150 L270,160 L275,180 Z" fill="#ffa500" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+          <div class="control-buttons">
+            <button id="gender-btn" class="ctrl-btn">👤 Gender</button>
+            <button id="random-btn" class="ctrl-btn">🎲 Random</button>
+            <button id="undo-btn" class="ctrl-btn">↶ Undo</button>
+            <button id="redo-btn" class="ctrl-btn">↷ Redo</button>
+            <button id="reset-btn" class="ctrl-btn">🔄 Reset</button>
+            <button id="download-btn" class="ctrl-btn primary">
+              ⬇ Download
+            </button>
+          </div>
+
+          <!-- Customization Options -->
+          <div class="customization-panel">
+            <div class="option-category">
+              <h3>Face</h3>
+              <div class="option-group">
+                <label>Skin Tone:</label>
+                <input type="color" id="skin-color" value="#f4c2a6" />
+              </div>
+              <div class="option-group">
+                <label>Face Width:</label>
+                <input
+                  type="range"
+                  id="face-width"
+                  min="60"
+                  max="100"
+                  value="80"
+                />
+              </div>
+              <div class="option-group">
+                <label>Face Height:</label>
+                <input
+                  type="range"
+                  id="face-height"
+                  min="80"
+                  max="120"
+                  value="100"
+                />
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Eyes</h3>
+              <div class="option-group">
+                <label>Eye Color:</label>
+                <input type="color" id="eye-color" value="#654321" />
+              </div>
+              <div class="option-group">
+                <label>Eye Size:</label>
+                <input
+                  type="range"
+                  id="eye-size"
+                  min="10"
+                  max="25"
+                  value="20"
+                />
+              </div>
+              <div class="option-group">
+                <label>Eye Shape:</label>
+                <select id="eye-shape">
+                  <option value="normal">Normal</option>
+                  <option value="round">Round</option>
+                  <option value="almond">Almond</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Hair</h3>
+              <div class="option-group">
+                <label>Hair Color:</label>
+                <input type="color" id="hair-color" value="#4a3728" />
+              </div>
+              <div class="option-group">
+                <label>Hair Style:</label>
+                <select id="hair-style">
+                  <option value="short">Short</option>
+                  <option value="long">Long</option>
+                  <option value="curly">Curly</option>
+                  <option value="bald">Bald</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Head Covering</h3>
+              <div class="option-group">
+                <label>Type:</label>
+                <select id="headcovering-type">
+                  <option value="none">None</option>
+                  <option value="hijab">Hijab</option>
+                  <option value="turban">Turban</option>
+                  <option value="bandana">Bandana</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label>Color:</label>
+                <input type="color" id="headcovering-color" value="#8b4789" />
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Face Mask</h3>
+              <div class="option-group">
+                <label>Type:</label>
+                <select id="facemask-type">
+                  <option value="none">None</option>
+                  <option value="surgical">Surgical Mask</option>
+                  <option value="cloth">Cloth Mask</option>
+                  <option value="n95">N95 Mask</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label>Mask Color:</label>
+                <input type="color" id="facemask-color" value="#ffffff" />
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Animal Mask</h3>
+              <div class="option-group">
+                <label>Type:</label>
+                <select id="animalmask-type">
+                  <option value="none">None</option>
+                  <option value="cat">Cat</option>
+                  <option value="dog">Dog</option>
+                  <option value="bunny">Bunny</option>
+                  <option value="fox">Fox</option>
+                  <option value="panda">Panda</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Accessories</h3>
+              <div class="option-group">
+                <label>Glasses:</label>
+                <select id="glasses-type">
+                  <option value="none">None</option>
+                  <option value="regular">Regular</option>
+                  <option value="sunglasses">Sunglasses</option>
+                  <option value="round">Round</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Facial Hair</h3>
+              <div class="option-group">
+                <label>Beard Style:</label>
+                <select id="beard-style">
+                  <option value="none">None</option>
+                  <option value="full">Full Beard</option>
+                  <option value="goatee">Goatee</option>
+                  <option value="stubble">Stubble</option>
+                  <option value="chinstrap">Chinstrap</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label>Moustache Style:</label>
+                <select id="moustache-style">
+                  <option value="none">None</option>
+                  <option value="regular">Regular</option>
+                  <option value="handlebar">Handlebar</option>
+                  <option value="pencil">Pencil</option>
+                  <option value="toothbrush">Toothbrush</option>
+                  <option value="chevron">Chevron</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label>Facial Hair Color:</label>
+                <input type="color" id="facialhair-color" value="#4a3728" />
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Face Moles</h3>
+              <div class="option-group">
+                <label>Mole Position:</label>
+                <select id="mole-position">
+                  <option value="none">None</option>
+                  <option value="above-mouth-left">Above Mouth (Left)</option>
+                  <option value="above-mouth-right">Above Mouth (Right)</option>
+                  <option value="below-mouth-left">Below Mouth (Left)</option>
+                  <option value="below-mouth-right">Below Mouth (Right)</option>
+                  <option value="left-cheek">Left Cheek</option>
+                  <option value="right-cheek">Right Cheek</option>
+                  <option value="chin">Chin</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label>Mole Size:</label>
+                <input type="range" id="mole-size" min="2" max="8" value="4" />
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Head Accessories</h3>
+              <div class="option-group">
+                <label>Bindi:</label>
+                <select id="bindi-style">
+                  <option value="none">None</option>
+                  <option value="dot">Dot</option>
+                  <option value="teardrop">Teardrop</option>
+                  <option value="diamond">Diamond</option>
+                </select>
+              </div>
+              <div class="option-group">
+                <label>Bindi Color:</label>
+                <input type="color" id="bindi-color" value="#dc143c" />
+              </div>
+              <div class="option-group">
+                <label>Kohl/Eyeliner:</label>
+                <select id="kohl-style">
+                  <option value="none">None</option>
+                  <option value="light">Light</option>
+                  <option value="medium">Medium</option>
+                  <option value="heavy">Heavy</option>
+                  <option value="winged">Winged</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Mouth</h3>
+              <div class="option-group">
+                <label>Expression:</label>
+                <select id="mouth-expression">
+                  <option value="smile">Smile</option>
+                  <option value="neutral">Neutral</option>
+                  <option value="sad">Sad</option>
+                  <option value="laugh">Laugh</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Clothing</h3>
+              <div class="option-group">
+                <label>Color:</label>
+                <input type="color" id="clothing-color" value="#3498db" />
+              </div>
+              <div class="option-group">
+                <label>Style:</label>
+                <select id="clothing-style">
+                  <option value="tshirt">T-Shirt</option>
+                  <option value="hoodie">Hoodie</option>
+                  <option value="formal">Formal</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="option-category">
+              <h3>Background</h3>
+              <div class="option-group">
+                <label>Color:</label>
+                <input type="color" id="bg-color" value="#e0e0e0" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Modal -->
+      <div id="download-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Download Avatar</h2>
+          <div class="download-options">
+            <button class="download-option" data-format="png" data-size="30">
+              PNG 30x30px
+            </button>
+            <button class="download-option" data-format="png" data-size="50">
+              PNG 50x50px
+            </button>
+            <button class="download-option" data-format="png" data-size="100">
+              PNG 100x100px
+            </button>
+            <button class="download-option" data-format="png" data-size="150">
+              PNG 150x150px
+            </button>
+            <button class="download-option" data-format="png" data-size="200">
+              PNG 200x200px
+            </button>
+            <button class="download-option" data-format="png" data-size="300">
+              PNG 300x300px
+            </button>
+            <button
+              class="download-option"
+              data-format="svg"
+              data-size="vector"
+            >
+              SVG (Vector)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
